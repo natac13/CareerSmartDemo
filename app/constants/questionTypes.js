@@ -1,0 +1,2 @@
+export const OPEN_ANSWERS = 'OPEN_ANSWERS';
+export const CLOSE_ANSWERS = 'CLOSE_ANSWERS';

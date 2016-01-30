@@ -1,0 +1,51 @@
+{
+    "1" :
+    {
+        "question": "What can we do for you?",
+        "answers": [
+            "We will build cover letters and resumes that will result in interviews",
+            "We will coach you to an interview performance that will impress employers",
+            "We will coach you on how to negotiate"
+        ],
+        "open": false
+    },
+    "2": {
+        "question": "How does it work?",
+        "answers": [
+            "We will help you identify and describe your achievements in both your documents and your interview answers",
+            "Your achievements will prove that you have the skills that employers are seeking"
+        ],
+        "open": false
+    },
+    "3": {
+        "question": "Why choose us?",
+        "answers": [
+            "We have successfully helped clients across Canada and throughout the United States including Silicon Valley",
+            "Our services can take you anywhere in the world"
+        ],
+        "open": false
+    },
+    "4": {
+        "question": "Can I use the services online from remote locations?",
+        "answers": [
+            "We are prepared to word with you electronically no matter where you are",
+            "Technology will allow us to personalize the service anywhere"
+        ],
+        "open": false
+    },
+    "5": {
+        "question": "Do you offer Career Transition/Outplacement service?",
+        "answers": [
+            "We have successfully assisted companies to respectfully downsize their staff",
+            "Our out placement packages include out full range of services"
+        ],
+        "open": false
+    },
+    "6": {
+        "question": "What career is right for me?",
+        "answers": [
+            "We eliminate the confusion about your career direction by using formal tools that clarify your ideal career path"
+        ],
+        "open": false
+    }
+}
