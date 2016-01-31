@@ -6,7 +6,8 @@ import {
 } from '../constants/';
 
 import {
-    openAnswers
+    openAnswers,
+    closeAnswers
 } from '../js/core-questions';
 
 import sample from '../../questionSample.json';
@@ -23,7 +24,12 @@ const questionAnswers = (state = initialState, action) => {
         case OPEN_ANSWERS:
             return state.set(
                 'questions',
-                openAnswers(state.get('questions', action))
+                openAnswers(state.get('questions'), action)
+            );
+        case CLOSE_ANSWERS:
+            return state.set(
+                'questions',
+                closeAnswers(state.get('questions'), action)
             );
         default:
             return state;

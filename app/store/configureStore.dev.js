@@ -1,25 +1,27 @@
 import { createStore, applyMiddleware } from 'redux';
+
 /*** Middlewares ***/
+import logger from 'redux-logger';
 
 /*** Reducer ***/
 import rootReducer from '../reducers/';
 
 
-// import { createHistory } from 'history';
-// import { syncHistory, routeReducer } from 'redux-simple-router';
+import { createHistory } from 'history';
+import { syncHistory, routeReducer } from 'redux-simple-router';
 
-// export const history = createHistory();
+export const history = createHistory();
 // Sync dispatched route actions to the history
-// const reduxRouterMiddleware = syncHistory(history);
+const reduxRouterMiddleware = syncHistory(history);
 
-// const loggerMiddleware = logger();
+const loggerMiddleware = logger();
 
-// const createStoreWithMiddleware = applyMiddleware(
-//     reduxRouterMiddleware,
+const createStoreWithMiddleware = applyMiddleware(
+    reduxRouterMiddleware,
 //     thunkMiddleware,
 //     firebaseMiddleware,
-//     loggerMiddleware
-// )(createStore);
+    loggerMiddleware
+)(createStore);
 
 /*===========================================
 =            Immutable Dev tools            =
@@ -32,10 +34,9 @@ installDevTools(Immutable);
 /*=====  End of Immutable Dev tools  ======*/
 
 
-
 export default function configureStore(initialState) {
     // applyMiddleware supercharges createStore with middleware:
 
     // We can use it exactly like “vanilla” createStore.
-    return createStore(rootReducer, initialState);
+    return createStoreWithMiddleware(rootReducer, initialState);
 }

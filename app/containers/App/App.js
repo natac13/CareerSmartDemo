@@ -18,14 +18,24 @@ class App extends Component {
             return (
                 <QuestionBrick
                     key={index}
+                    index={index}
                     question={question.get('question')}
                     answers={question.get('answers')}
-                    open={question.get('open')} />
+                    open={question.get('open')}
+                    anchorEl={question.get('anchorEl')}
+                    openAnswers={this.props.actions.openAnswers}
+                    closeAnswers={this.props.actions.closeAnswers} />
             );
         });
         return (
             <div className={style.app}>
-                Career Smarts
+                <div className={style.logo} />
+
+                <img
+                    src={require('../../resources/img/careers_logo.png')}
+                    alt="logo"
+                    width="450"
+                    height="100"/>
                 {questions}
             </div>
         );

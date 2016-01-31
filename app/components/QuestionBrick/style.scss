@@ -1,6 +1,37 @@
 @import '~../../scss/variables';
 
+
+  /* generated element for shine effect.
+   * normal state is semi-transparent
+   * white but with zero width. Set no
+   * transition here for no mouse-leave
+   * animations. Otherwise the effect
+   * will play in reverse when your mouse
+   * leaves the element
+   */
+  .wrapper:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: rgba(255,255,255, .4);
+      transition: none;
+
+  }
+  /* on hover we animate the width to
+   * 100% and opacity to 0 so the element
+   * grows and fades out
+   */
+  .wrapper:hover:after {
+      width: 120%;
+      background-color: rgba(255, 255, 255, 0);
+      transition: all 0.4s ease-out;
+  }
+
 .wrapper {
+  position:relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,6 +40,9 @@
   width: 15em;
   height: auto;
   overflow: hidden;
+  background: $light-blue;
+
+
 
   &:nth-child(even) {
     align-self: flex-end;
@@ -31,7 +65,29 @@
 
   .openAnswer {
     align-self: flex-end;
+    z-index: 1;
     margin-right: 15px;
+  }
+
+  .visible,
+  .hidden {
+    overflow-y: hidden;
+    transition: .5s ease-in;
+  }
+
+  .visible {
+    opacity: 1;
+    height: 10em;
+    margin: 1em auto;
+    transform: rotate(0deg);
+  }
+
+  .hidden {
+    transform: rotate(180deg);
+    opacity: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
   }
 
   .answers {
@@ -41,13 +97,9 @@
     flex-direction: column;
     width: 13em;
 
-    // temp
-    opacity: 0;
-    height: 0;
-    //
-
     .answer {
 
     }
   }
+
 }

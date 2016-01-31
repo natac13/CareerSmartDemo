@@ -9,6 +9,16 @@ import App from './containers/App/';
 import configureStore from './store/configureStore';
 const store = configureStore();
 
+/*===============================================
+=            Material-ui requirement            =
+===============================================*/
+
+import injectTapEventPlugin from 'react-tap-event-plugin';
+injectTapEventPlugin();
+
+/*=====  End of Material-ui requirement  ======*/
+
+
 
 /*===========================================
 =            Immutable Dev tools            =

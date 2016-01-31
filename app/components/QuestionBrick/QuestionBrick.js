@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react';
+import { Map } from 'immutable';
 
 import Popover from 'material-ui/lib/popover/popover';
 import RaisedButton from 'material-ui/lib/raised-button';
@@ -20,19 +21,37 @@ const QuestionBrick = (props) => {
         );
     });
 
+    const handleClick = (event) => {
+        console.log(props);
+        console.log(event);
+        if ( props.open === false) {
+            props.openAnswers(Map({
+                id: props.index
+            }));
+        }
+        else {
+            props.closeAnswers(Map({
+                id: props.index
+            }));
+        }
+    };
     return (
         <div className={style.wrapper}>
             <p className={style.question}> {question} </p>
             <div className={style.openAnswer}>
                 <RaisedButton
+                    onTouchTap={handleClick}
                     backgroundColor={colors.darkBlue}
                     labelColor={colors.lightText}
                     label="Answer" />
 
             </div>
-            <ul className={style.answers}>
-                {answerDisplay}
-            </ul>
+            <div
+                className={props.open ? style.visible : style.hidden}>
+                <ul className={style.answers}>
+                    {answerDisplay}
+                </ul>
+            </div>
         </div>
     );
 };
