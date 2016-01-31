@@ -16,13 +16,6 @@ const reduxRouterMiddleware = syncHistory(history);
 
 const loggerMiddleware = logger();
 
-const createStoreWithMiddleware = applyMiddleware(
-    reduxRouterMiddleware,
-//     thunkMiddleware,
-//     firebaseMiddleware,
-    loggerMiddleware
-)(createStore);
-
 /*===========================================
 =            Immutable Dev tools            =
 ===========================================*/
@@ -38,5 +31,12 @@ export default function configureStore(initialState) {
     // applyMiddleware supercharges createStore with middleware:
 
     // We can use it exactly like “vanilla” createStore.
-    return createStoreWithMiddleware(rootReducer, initialState);
+    return createStore(
+        rootReducer,
+        initialState,
+        applyMiddleware(
+            reduxRouterMiddleware,
+            loggerMiddleware
+        )
+    );
 }
