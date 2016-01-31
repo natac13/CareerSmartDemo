@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ActionCreators from '../../actions';
+
+import ContactForm from '../../components/ContactForm';
 import QuestionBrick from '../../components/QuestionBrick';
 
 
@@ -29,13 +31,15 @@ class App extends Component {
         });
         return (
             <div className={style.app}>
-                <div className={style.logo} />
-
-                <img
-                    src={require('../../resources/img/careers_logo.png')}
-                    alt="logo"
-                    width="450"
-                    height="100"/>
+                    <img
+                        className={style.logo}
+                        src={require('../../resources/img/careers_logo.png')}
+                        alt="logo"
+                        width="450"
+                        height="100"/>
+                        <div className={style.contactFormWrapper} />
+                <ContactForm
+                    questionsMap={this.props.questionAnswers.get('questions')}/>
                 {questions}
             </div>
         );

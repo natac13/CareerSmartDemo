@@ -25,3 +25,10 @@ export const closeAnswers = (questions, action) => {
     // );
     return questions;
 };
+
+function isOpen(question) {
+    return question.get('open') === true;
+}
+export const checkAnyOpen = (questionsMap) => {
+    return questionsMap.some(isOpen);
+};

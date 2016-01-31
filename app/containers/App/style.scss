@@ -7,10 +7,27 @@ body {
 
 .app {
   display: flex;
-  flex-direction: column;
+  flex-flow: column wrap;
   justify-content: space-around;
+  align-items: center;
   background: url('../../resources/img/lionel.jpg') no-repeat center;
-  height: 100%;
-  width: 100%;
+  background-size: cover;
+  height: 45em;
+  width: auto;
+  padding: 1em;
+}
 
+.logo {
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, 50%);
+}
+
+.contactFormWrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
 }
