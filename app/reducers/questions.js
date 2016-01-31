@@ -5,6 +5,10 @@ import {
     CLOSE_ANSWERS
 } from '../constants/';
 
+import {
+    openAnswers
+} from '../js/core-questions';
+
 import sample from '../../questionSample.json';
 
 const initialState = fromJS({
@@ -17,7 +21,10 @@ const questionAnswers = (state = initialState, action) => {
         // case NEW_QUESTION:
         //     return state;
         case OPEN_ANSWERS:
-            return
+            return state.set(
+                'questions',
+                openAnswers(state.get('questions', action))
+            );
         default:
             return state;
     }

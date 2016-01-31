@@ -1,4 +1,4 @@
-import { createAction } from 'redux-action';
+import { createAction } from 'redux-actions';
 
 import {
     OPEN_ANSWERS,

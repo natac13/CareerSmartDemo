@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-// import * as ActionCreators from '../../actions';
+import * as ActionCreators from '../../actions';
 import QuestionBrick from '../../components/QuestionBrick';
+
+
+import style from './style';
 
 class App extends Component {
     constructor(props) {
@@ -21,7 +24,7 @@ class App extends Component {
             );
         });
         return (
-            <div >
+            <div className={style.app}>
                 Career Smarts
                 {questions}
             </div>
@@ -40,17 +43,16 @@ function mapStateToProps(state) {
     };
 }
 
-// function mapDispatchToProps(dispatch) {
-//     return {
-//         actions: bindActionCreators(ActionCreators, dispatch),
-//         dispatch
-//     };
-// }
+function mapDispatchToProps(dispatch) {
+    return {
+        actions: bindActionCreators(ActionCreators, dispatch),
+        dispatch
+    };
+}
 
 export default connect(
     mapStateToProps,
-    // mapDispatchToProps
-    {}
+    mapDispatchToProps
 )(App);
 
 /*=====  End of Redux connection  ======*/

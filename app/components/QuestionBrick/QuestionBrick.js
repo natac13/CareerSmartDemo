@@ -4,6 +4,7 @@ import Popover from 'material-ui/lib/popover/popover';
 import RaisedButton from 'material-ui/lib/raised-button';
 
 import style from './style';
+import * as colors from '../../scss/colors';
 
 const QuestionBrick = (props) => {
     const { question, answers, open } = props;
@@ -11,7 +12,9 @@ const QuestionBrick = (props) => {
 
     const answerDisplay = answers.map((answer, index) => {
         return (
-            <li key={index}>
+            <li
+                key={index}
+                className={style.answer}>
                 {answer}
             </li>
         );
@@ -19,8 +22,15 @@ const QuestionBrick = (props) => {
 
     return (
         <div className={style.wrapper}>
-            <p> {question} </p>
-            <ul>
+            <p className={style.question}> {question} </p>
+            <div className={style.openAnswer}>
+                <RaisedButton
+                    backgroundColor={colors.darkBlue}
+                    labelColor={colors.lightText}
+                    label="Answer" />
+
+            </div>
+            <ul className={style.answers}>
                 {answerDisplay}
             </ul>
         </div>

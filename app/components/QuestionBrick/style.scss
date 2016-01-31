@@ -1,0 +1,53 @@
+@import '~../../scss/variables';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 0 15px $shadow;
+  width: 15em;
+  height: auto;
+  overflow: hidden;
+
+  &:nth-child(even) {
+    align-self: flex-end;
+  }
+
+  &:nth-child(odd) {
+    align-self: flex-start;
+  }
+
+  .question {
+    background: $question-bgcolor;
+    flex: 1 auto;
+    border-left: 10px solid $dark-blue;
+    margin: 0.5em 10px -1em;
+    padding: 0.5em 10px 1em;
+    width: 13em;
+    border-radius: 15px
+
+  }
+
+  .openAnswer {
+    align-self: flex-end;
+    margin-right: 15px;
+  }
+
+  .answers {
+    list-style: none;
+    display: flex;
+    flex: 1 0em;
+    flex-direction: column;
+    width: 13em;
+
+    // temp
+    opacity: 0;
+    height: 0;
+    //
+
+    .answer {
+
+    }
+  }
+}

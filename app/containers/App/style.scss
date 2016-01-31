@@ -1,0 +1,12 @@
+@import '~normalize.css';
+@import '~../../scss/variables';
+
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
