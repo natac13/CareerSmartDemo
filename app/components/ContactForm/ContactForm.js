@@ -5,6 +5,8 @@ import { checkAnyOpen } from '../../js/core-questions';
 import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 
+import { addUser } from '../../actions/';
+
 import style from './style';
 import * as colors from '../../scss/colors';
 
@@ -12,6 +14,7 @@ const ContactForm = (props) => {
 
     const submit = (values, dispatch) => {
         console.log(values);
+        dispatch(addUser(values));
     };
 
     const {

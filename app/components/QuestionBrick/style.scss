@@ -59,7 +59,8 @@
     margin: 0.5em 10px -1em;
     padding: 0.5em 10px 1em;
     width: 13em;
-    border-radius: 15px
+    border-radius: 15px;
+    box-shadow: -5px 2px 10px $shadow;
 
   }
 
@@ -91,11 +92,12 @@
   }
 
   .answers {
-    list-style: none;
+    list-style: upper-roman;
     display: flex;
     flex: 1 0em;
     flex-direction: column;
     width: 13em;
+    align-items: center;
 
     .answer {
 

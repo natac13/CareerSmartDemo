@@ -3,11 +3,13 @@ import { routeReducer }    from 'redux-simple-router';
 import { reducer as formReducer } from 'redux-form';
 
 import questionAnswers from './questions';
+import users from './users';
 
 const rootReducer = combineReducers(Object.assign(
     {},
     {
-        questionAnswers
+        questionAnswers,
+        users
     },
     {
         routing: routeReducer,

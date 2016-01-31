@@ -31,15 +31,8 @@ class App extends Component {
         });
         return (
             <div className={style.app}>
-                    <img
-                        className={style.logo}
-                        src={require('../../resources/img/careers_logo.png')}
-                        alt="logo"
-                        width="450"
-                        height="100"/>
-                        <div className={style.contactFormWrapper} />
                 <ContactForm
-                    questionsMap={this.props.questionAnswers.get('questions')}/>
+                    questionsMap={this.props.questionAnswers.get('questions')} />
                 {questions}
             </div>
         );
