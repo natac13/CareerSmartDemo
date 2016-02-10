@@ -1,0 +1,43 @@
+.wrapper {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  height: auto;
+  background: white;
+  margin-bottom: 2em;
+  padding: 0.5em;
+
+  @media only screen and (max-width: 720px) {
+    flex-flow: column;
+    algin-items: center;
+  }
+
+  .logo {
+    flex: 2;
+  }
+
+  .tagLine {
+    flex: 3;
+    align-self: center;
+  }
+
+  .socials {
+    flex: 1;
+    flex-flow: row;
+    align-self: center;
+    list-style: none;
+    justify-content: space-between;
+
+    .social {
+      display: inline-block;
+      margin: 0.25em;
+      width: 1em;
+      flex: 1 1em;
+    }
+
+  }
+}

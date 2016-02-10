@@ -41,6 +41,7 @@
   height: auto;
   overflow: hidden;
   background: $light-blue;
+  margin: 0.23em 0;
 
 
 
@@ -72,14 +73,12 @@
 
   .visible,
   .hidden {
-    display: flex;
-    overflow-y: hidden;
     transition: .5s ease-in;
   }
 
   .visible {
     opacity: 1;
-    height: 10em;
+    height: 13em;
     margin: 1em auto;
     transform: rotate(0deg);
   }
@@ -99,6 +98,7 @@
     flex-direction: column;
     max-width: 10em;
     align-items: center;
+    padding-bottom: 0.25em;
 
     .answer {
 
