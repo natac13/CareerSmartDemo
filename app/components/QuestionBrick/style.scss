@@ -72,6 +72,7 @@
 
   .visible,
   .hidden {
+    display: flex;
     overflow-y: hidden;
     transition: .5s ease-in;
   }
@@ -94,9 +95,9 @@
   .answers {
     list-style: upper-roman;
     display: flex;
-    flex: 1 0em;
+    flex: 1 3em;
     flex-direction: column;
-    width: 13em;
+    max-width: 10em;
     align-items: center;
 
     .answer {

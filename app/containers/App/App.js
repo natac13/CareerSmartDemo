@@ -4,7 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as ActionCreators from '../../actions';
 
 import ContactForm from '../../components/ContactForm';
-import QuestionBrick from '../../components/QuestionBrick';
+import QuestionGrouping from '../../components/QuestionGrouping';
 
 
 import style from './style';
@@ -16,24 +16,15 @@ class App extends Component {
     }
 
     render() {
-        const questions = this.props.questionAnswers.get('questions').map((question, index) => {
-            return (
-                <QuestionBrick
-                    key={index}
-                    index={index}
-                    question={question.get('question')}
-                    answers={question.get('answers')}
-                    open={question.get('open')}
-                    anchorEl={question.get('anchorEl')}
-                    openAnswers={this.props.actions.openAnswers}
-                    closeAnswers={this.props.actions.closeAnswers} />
-            );
-        });
+
         return (
             <div className={style.app}>
                 <ContactForm
                     questionsMap={this.props.questionAnswers.get('questions')} />
-                {questions}
+                <QuestionGrouping
+                    questionAnswers={this.props.questionAnswers}
+                    { ...this.props } />
+
             </div>
         );
     }

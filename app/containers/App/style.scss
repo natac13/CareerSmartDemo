@@ -6,13 +6,9 @@ body {
 }
 
 .app {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  align-items: center;
   background: #ddd;
   background-size: cover;
-  height: auto;
+  height: 100vh;
   width: auto;
   padding: 1em;
 }

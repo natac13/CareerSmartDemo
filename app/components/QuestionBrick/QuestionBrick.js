@@ -22,8 +22,6 @@ const QuestionBrick = (props) => {
     });
 
     const handleClick = (event) => {
-        console.log(props);
-        console.log(event);
         if ( props.open === false) {
             props.openAnswers(Map({
                 id: props.index
