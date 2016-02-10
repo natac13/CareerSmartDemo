@@ -49,7 +49,7 @@ const ContactForm = (props) => {
                     floatingLabelText="Enter Personal Situation"
                     {...situation} />
                 <RaisedButton
-                    label="Contace Lionel"
+                    label="Contact Lionel"
                     backgroundColor={colors.darkBlue}
                     labelColor={colors.lightText}
                     onClick={handleSubmit(submit)} />

@@ -3,6 +3,7 @@ import { render }        from 'react-dom';
 // import Router            from 'react-router';
 import { Provider }      from 'react-redux';
 // import routes            from './config/routes';
+import './scss/setup.scss';
 
 import App from './containers/App/';
 
