@@ -4,6 +4,7 @@ import { bindActionCreators } from 'redux';
 import * as ActionCreators    from '../../actions';
 
 import ContactForm      from '../../components/ContactForm/';
+import QuestionBrick    from '../../components/QuestionBrick/';
 import QuestionGrouping from '../../components/QuestionGrouping/';
 import Header           from '../../components/Header/';
 
@@ -17,15 +18,27 @@ class App extends Component {
     }
 
     render() {
-
+        const questions = this.props.questionAnswers.get('questions').map((question, index) => {
+            return (
+                <QuestionBrick
+                    key={index}
+                    index={index}
+                    question={question.get('question')}
+                    answers={question.get('answers')}
+                    open={question.get('open')}
+                    openAnswers={this.props.actions.openAnswers}
+                    closeAnswers={this.props.actions.closeAnswers} />
+            );
+        });
         return (
             <div className={style.app}>
                 <Header />
+                <QuestionGrouping
+                    questionBricks={ questions.take(3) } />
                 <ContactForm
                     questionsMap={this.props.questionAnswers.get('questions')} />
                 <QuestionGrouping
-                    questionAnswers={this.props.questionAnswers}
-                    { ...this.props } />
+                    questionBricks={ questions.takeLast(3) } />
 
             </div>
         );

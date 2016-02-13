@@ -1,19 +1,21 @@
 @import '~../../scss/variables';
 
-.visible,
-.hidden {
+.form {
+  padding: 0.5em 1em 1.5em 1em;
+  border-radius: 13px;
   flex: 1 20em;
   display: flex;
   flex-flow: column;
   align-items: flex-start;
   overflow-y: hidden;
   transition: .5s ease-in;
+
 }
 
 .visible {
   background: lighten($question-bgcolor, 5%);
+  box-shadow: 0 0 23px darkslategrey;
   opacity: 1;
-  height: 30em;
   width: auto;
   margin: 1em auto;
   transform: rotateY(0deg) rotateZ(0deg) scale(1);
@@ -21,17 +23,14 @@
 
 .hidden {
   transform: rotateY(-180deg) rotateZ(60deg) scale(0.5);
+  box-shadow: none;
   opacity: 0;
-  height: 0;
   margin: 0;
   padding: 0;
 }
 .wrapper {
-  position: absolute;
+  align-self: center;
   perspective: 1000px;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%,-50%);
   z-index: 99;
   width: 23em;
 

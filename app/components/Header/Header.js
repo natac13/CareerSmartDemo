@@ -1,5 +1,6 @@
 import React, { PropTypes }from 'react';
-import FontAwesome from 'react-fontawesome';
+
+import Icon from 'react-fa';
 
 import style from './style.scss';
 
@@ -15,16 +16,18 @@ const Header = (props) => {
             </h3>
             <div className={style.socials}>
                 <a href="#" className={style.social}>
-                    <FontAwesome name="twitter-square" />
+                    <Icon name="twitter-square" />
                 </a>
                 <a href="#" className={style.social}>
-                    <FontAwesome name="linkedin-square" />
+                    <Icon name="linkedin-square" />
+
                 </a>
                 <a href="#" className={style.social}>
-                    <FontAwesome name="skype" />
+                    <Icon name="skype" />
                 </a>
                 <a href="#" className={style.social}>
-                    <FontAwesome name="envelope" />
+                    <Icon name="envelope-square" />
+
                 </a>
 
             </div>

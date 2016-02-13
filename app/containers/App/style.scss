@@ -6,6 +6,8 @@ body {
 }
 
 .app {
+  display: flex;
+  justify-content: space-between;
   background: #ddd;
   height: auto;
   width: auto;
@@ -20,9 +22,3 @@ body {
   transform: translate(-50%, 50%);
 }
 
-.contactFormWrapper {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%,-50%);
-}
