@@ -15,7 +15,7 @@ const Header = (props) => {
                 src={require('../../images/careers_logo.png')}
                 alt="CareerSmarts Logo" />
             <h3 className={style.tagLine}>
-                Looking for a fresh Career Start? Contact CareerSmarts!
+                Looking for a fullfilling Career? Take the CareerSmarts Advantage!
             </h3>
 {/*            <div className={style.socials}>
                 <a href="#" className={style.social}>
@@ -34,7 +34,10 @@ const Header = (props) => {
                 </a>
 
             </div>*/}
-            <NavButton />
+            <div className={style.navButton} >
+                <NavButton />
+
+            </div>
         </header>
     );
 };

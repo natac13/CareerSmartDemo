@@ -4,7 +4,7 @@ import React, { Component, PropTypes } from 'react';
 import FontIcon from 'material-ui/lib/font-icon';
 import IconButton from 'material-ui/lib/icon-button';
 import Dialog from 'material-ui/lib/dialog';
-import Menu from 'material-ui/lib/menus/menu';
+import FlatButton from 'material-ui/lib/flat-button';
 import MenuItem from 'material-ui/lib/menus/menu-item';
 
 import style from './style.scss';
@@ -36,7 +36,9 @@ class NavButton extends Component {
             <IconButton
                 tooltip="close"
                 onTouchTap={this.handleClose} >
-                <FontIcon className="fa fa-close" />
+                <FontIcon
+                    color={colors.textWhite}
+                    className="fa fa-times-circle-o" />
             </IconButton>
         ];
 
@@ -46,16 +48,6 @@ class NavButton extends Component {
         };
 
 
-        const menuItemStyle = {
-            root: {
-                margin: '.2em 0'
-            },
-
-            innerDivStyle: {
-                fontSize: '40px',
-                padding: '0.1em'
-            }
-        };
 
         const iconStyle = {
             icon: {
@@ -64,19 +56,29 @@ class NavButton extends Component {
 
         };
 
+        const buttonStyle = {
+            root: {
+                margin: '0.2em'
+            },
+            label: {
+                fontSize: '40px',
+                color: colors.textWhite,
+                textDecoration: 'underline'
+
+            }
+        };
+
 
         return (
             <div >
-                <div className={style.buttonWrapper}>
-                    <IconButton
-                        tooltip="navigation"
-                        iconStyle={iconStyle.icon}
-                        onTouchTap={this.handleOpen}>
-                        <FontIcon
-                            className="fa fa-bars" />
-                    </IconButton>
-
-                </div>
+                <IconButton
+                    tooltip="navigation"
+                    iconStyle={iconStyle.icon}
+                    onTouchTap={this.handleOpen}>
+                    <FontIcon
+                        color={this.state.open ? colors.textWhite : colors.reallyDarkBlue}
+                        className={`fa fa-${this.state.open ? 'times-circle-o' : 'bars'}`} />
+                </IconButton>
                 <Dialog
                     actions={actions}
                     modal={false}
@@ -86,22 +88,30 @@ class NavButton extends Component {
                     contentClassName={style.modalContent} >
 
                     <div className={style.navWrapper}>
-                        <MenuItem
-                            innerDivStyle={menuItemStyle.innerDivStyle}
-                            style={menuItemStyle.root}
-                            primaryText="WHO WE ARE" />
-                        <MenuItem
-                            innerDivStyle={menuItemStyle.innerDivStyle}
-                            style={menuItemStyle.root}
-                            primaryText="WHAT WE DO" />
-                        <MenuItem
-                            innerDivStyle={menuItemStyle.innerDivStyle}
-                            style={menuItemStyle.root}
-                            primaryText="SERVICES" />
-                        <MenuItem
-                            innerDivStyle={menuItemStyle.innerDivStyle}
-                            style={menuItemStyle.root}
-                            primaryText="CONTACT" />
+                        <FlatButton
+                            label="WHO WE ARE"
+                            linkButton={true}
+                            href="http://www.careersmarts.ca/team.php"
+                            style={buttonStyle.root}
+                            labelStyle={buttonStyle.label} />
+                        <FlatButton
+                            label="WHAT WE DO"
+                            linkButton={true}
+                            href="http://www.careersmarts.ca/whatwedo.php"
+                            style={buttonStyle.root}
+                            labelStyle={buttonStyle.label} />
+                        <FlatButton
+                            label="SERVICES"
+                            linkButton={true}
+                            href="http://www.careersmarts.ca/career_services.php"
+                            style={buttonStyle.root}
+                            labelStyle={buttonStyle.label} />
+                        <FlatButton
+                            label="CONTACT"
+                            linkButton={true}
+                            href="http://www.careersmarts.ca/contact.php"
+                            style={buttonStyle.root}
+                            labelStyle={buttonStyle.label} />
 
                     </div>
 

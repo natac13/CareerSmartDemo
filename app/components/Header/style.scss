@@ -52,6 +52,14 @@
 
   }
 
+  .navButton {
+    margin-right: 2em;
+    margin-bottom: 1.5em;
+
+    @media only screen and (max-width: 720px) {
+      margin-right: 1em;
+    }
+  }
   .socials {
     flex: 1;
     flex-flow: row;

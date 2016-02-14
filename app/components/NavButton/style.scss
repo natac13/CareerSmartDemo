@@ -1,14 +1,4 @@
-.buttonWrapper {
-  display: flex;
-  align-items: center;
-  flex: 1;
-  margin-right: 2em;
-  margin-bottom: 1.5em;
-
-  @media only screen and (max-width: 720px) {
-    margin-right: 1em;
-  }
-}
+@import '~../../scss/variables';
 
 .navWrapper {
   display: flex;
@@ -29,8 +19,9 @@
 
   & > div {
     border-radius: 10px !important;
-    background-color: #ACCACA !important;
-    background-image: url("http://www.transparenttextures.com/patterns/felt.png") !important;
+    background-color: $really-dark-blue !important;
+
+    background-image: url("http://www.transparenttextures.com/patterns/grey-washed-wall.png") !important;
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   }
 }
