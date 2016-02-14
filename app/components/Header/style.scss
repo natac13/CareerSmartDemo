@@ -9,22 +9,47 @@
   right: 0;
   z-index: 99;
   height: auto;
-  background: white;
+  background: #93b7d6;
   margin-bottom: 2em;
   padding: 0.5em;
 
   @media only screen and (max-width: 720px) {
-    flex-flow: column;
+    flex-flow: row;
     algin-items: center;
+    height: 100px;
+    padding: 0;
+    align-items: flex-end;
+    position: absolute;
+    // background: white;
   }
 
   .logo {
-    flex: 2;
+    display: none;
+    height: 0;
+    opacity: 0;
+
+    @media only screen and (max-width: 720px) {
+      flex: 1;
+      display: inline-block;
+      height: auto;
+      width: 50%;
+      opacity: 1;
+      align-self: center;
+    }
   }
 
   .tagLine {
-    flex: 3;
+    flex: 2;
     align-self: center;
+    text-align: center;
+    font-size: 1.225em;
+
+    @media only screen and (max-width: 720px) {
+      display: none;
+      height: 0;
+      opacity: 0;
+    }
+
   }
 
   .socials {
@@ -49,6 +74,7 @@
         text-shadow: 0 0 1px $shadow;
       }
     }
-
   }
+
+
 }

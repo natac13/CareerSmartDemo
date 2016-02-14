@@ -1,6 +1,9 @@
 import React, { PropTypes }from 'react';
-
+/*** Third Party Components ***/
 import Icon from 'react-fa';
+
+/*** My Components ***/
+import NavButton from '../NavButton/';
 
 import style from './style.scss';
 
@@ -14,7 +17,7 @@ const Header = (props) => {
             <h3 className={style.tagLine}>
                 Looking for a fresh Career Start? Contact CareerSmarts!
             </h3>
-            <div className={style.socials}>
+{/*            <div className={style.socials}>
                 <a href="#" className={style.social}>
                     <Icon name="twitter-square" />
                 </a>
@@ -30,7 +33,8 @@ const Header = (props) => {
 
                 </a>
 
-            </div>
+            </div>*/}
+            <NavButton />
         </header>
     );
 };

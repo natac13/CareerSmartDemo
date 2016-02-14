@@ -101,7 +101,7 @@ const ContactForm = (props) => {
                     label="Clear Form"
                     labelPosition="before"
                     disabledBackgroundColor={colors.disabled}
-                    onClick={resetForm}
+                    onTouchTap={resetForm}
                     disabled={submitting}
                     backgroundColor={colors.darkBlue}
                     labelColor={colors.lightText}

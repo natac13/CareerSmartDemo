@@ -1,0 +1,36 @@
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin-right: 2em;
+  margin-bottom: 1.5em;
+
+  @media only screen and (max-width: 720px) {
+    margin-right: 1em;
+  }
+}
+
+.navWrapper {
+  display: flex;
+  flex-flow: column;
+
+}
+
+.modalContent {
+  width: 25% !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+
+  @media only screen and (max-width: 720px) {
+    width: 75% !important;
+  }
+
+  & > div {
+    border-radius: 10px !important;
+    background-color: #ACCACA !important;
+    background-image: url("http://www.transparenttextures.com/patterns/felt.png") !important;
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  }
+}
