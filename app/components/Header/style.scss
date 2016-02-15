@@ -10,7 +10,7 @@
   right: 0;
   z-index: 99;
   height: auto;
-  background: #93b7d6;
+  background: $header-bg;
   margin-bottom: 2em;
   padding: 0.5em;
 
@@ -40,10 +40,13 @@
   }
 
   .tagLine {
+    font-family: 'Oswald', sans-serif;
+    color: $header-text;
+    text-transform: uppercase;
     flex: 2;
     align-self: center;
     text-align: center;
-    font-size: ms(1);
+    font-size: ms(2);
 
     @media only screen and (max-width: 720px) {
       display: none;

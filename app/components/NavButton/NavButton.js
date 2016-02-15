@@ -1,14 +1,11 @@
 import React, { Component, PropTypes } from 'react';
 
 /*** Third Party Components ***/
-import FontIcon from 'material-ui/lib/font-icon';
-import IconButton from 'material-ui/lib/icon-button';
-import Dialog from 'material-ui/lib/dialog';
-import FlatButton from 'material-ui/lib/flat-button';
-import MenuItem from 'material-ui/lib/menus/menu-item';
+import Dialog from 'react-toolbox/lib/dialog';
+import { Button, IconButton } from 'react-toolbox/lib/button';
+import Icon from 'react-fa';
 
 import style from './style.scss';
-import * as colors from '../../scss/colors';
 
 class NavButton extends Component {
     constructor(props) {
@@ -31,74 +28,49 @@ class NavButton extends Component {
     };
 
     render() {
-        console.log(this.state.open)
-        const actions = [
-            <IconButton
-                tooltip="close"
-                onTouchTap={this.handleClose} >
-                <FontIcon
-                    color={colors.textWhite}
-                    className="fa fa-times-circle-o" />
-            </IconButton>
-        ];
-
-        const modalBodyStyle = {
-            display: 'flex',
-            justifyContent: 'space-around',
-        };
-
-
-
-        const iconStyle = {
-            icon: {
-                fontSize: '40px'
-            }
-
-        };
-
-
-
         return (
             <div >
                 <IconButton
-                    tooltip="navigation"
-                    iconStyle={iconStyle.icon}
+                    className={style.navBars}
+                    neutral={false}
                     onTouchTap={this.handleOpen}>
-                    <FontIcon
-                        color={this.state.open ? colors.textWhite : colors.reallyDarkBlue}
-                        className={`fa fa-${this.state.open ? 'times-circle-o' : 'bars'}`} />
+                    <Icon
+                        name={this.state.open ? 'times-circle-o' : 'bars'} />
                 </IconButton>
                 <Dialog
-                    actions={actions}
-                    modal={false}
-                    open={this.state.open}
-                    onRequestClose={this.handleClose}
-                    bodyStyle={modalBodyStyle}
-                    contentClassName={style.modalContent} >
+                    active={this.state.open}
+                    onOverlayClick={this.handleClose}
+                    className={style.dialog} >
 
-                    <div className={style.navWrapper}>
-                        <FlatButton
+
+                        <Button
+                            flat
                             label="WHO WE ARE"
-                            linkButton={true}
+                            target="_blank"
+                            neutral={false}
                             className={style.link}
                             href="http://www.careersmarts.ca/team.php" />
-                        <FlatButton
+                        <Button
+                            flat
                             label="WHAT WE DO"
-                            linkButton={true}
+                            target="_blank"
+                            neutral={false}
                             className={style.link}
                             href="http://www.careersmarts.ca/whatwedo.php" />
-                        <FlatButton
+                        <Button
+                            flat
                             label="SERVICES"
-                            linkButton={true}
+                            target="_blank"
+                            neutral={false}
                             className={style.link}
                             href="http://www.careersmarts.ca/career_services.php" />
-                        <FlatButton
+                        <Button
+                            flat
                             label="CONTACT"
-                            linkButton={true}
+                            target="_blank"
+                            neutral={false}
                             className={style.link}
                             href="http://www.careersmarts.ca/contact.php" />
-
-                    </div>
 
                 </Dialog>
             </div>

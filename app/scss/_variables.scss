@@ -2,10 +2,17 @@ $dark-blue: #396c97;
 $really-dark-blue: #05233C;
 $light-blue: lighten($dark-blue, 30%);
 $shadow: darken($dark-blue, 20%);
+
+// Background Colors
+$header-bg: #415465;
 $question-bgcolor: #CFDCE6;
+
+// Text Colors
 $text-white: #E9F3F5;
+$header-text: lighten($header-bg, 42%);
+
 
 
 // modular scale setup
 $ms-base: 1em;
-$ms-ratio: 1.25;
+$ms-ratio: 1.3333;

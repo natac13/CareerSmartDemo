@@ -1,8 +1,12 @@
 import React, { PropTypes } from 'react';
 import { Map } from 'immutable';
 
-import Popover from 'material-ui/lib/popover/popover';
-import RaisedButton from 'material-ui/lib/raised-button';
+import Tooltip from 'react-toolbox/lib/tooltip';
+import { Button, IconButton } from 'react-toolbox/lib/button';
+import Icon from 'react-fa';
+
+const TooltipButton = Tooltip(Button);
+const TooltipIconButton = Tooltip(IconButton);
 
 import style from './style';
 import * as colors from '../../scss/colors';
@@ -36,14 +40,12 @@ const QuestionBrick = (props) => {
     return (
         <div className={style.wrapper}>
             <p className={style.question}> {question} </p>
-            <div className={style.openAnswer}>
-                <RaisedButton
+                <IconButton
+                    floating
+                    neutral={false}
                     onTouchTap={handleClick}
-                    backgroundColor={colors.darkBlue}
-                    labelColor={colors.lightText}
-                    label="Answer" />
+                    className={style.openAnswer} ><Icon name="question-circle" /></IconButton>
 
-            </div>
             <div
                 className={props.open ? style.visible : style.hidden}>
                 <ul className={style.answers}>

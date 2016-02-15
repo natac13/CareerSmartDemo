@@ -1,36 +1,76 @@
 @import '~../../scss/variables';
 @import '~modularscale-sass/stylesheets/modular-scale';
 
-.navWrapper {
-  display: flex;
-  flex-flow: column;
+.navBars {
+  color: $header-text;
+  font-size: ms(3);
+  transition: .6s;
 
+  &:hover {
+    color: $really-dark-blue;
+  }
+}
+
+
+.dialog {
+  font-family: 'Oswald', sans-serif;
+  width: 75vw;
+  height: 50vh;
+  border-radius: 10px;
+  background-color: $really-dark-blue;
+  background-image: url("http://www.transparenttextures.com/patterns/grey-washed-wall.png");
+
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    width: 70vw;
+  }
+
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    width: 45vw;
+  }
+
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    width: 40vw;
+  }
+
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+    width: 30vw;
+  }
+
+
+  section[role='body'] {
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  & > nav[role='navigation'] {
+    display: none;
+  }
 }
 
 .link {
-  margin: 0.3em !important;
-  padding: 0.2em 0 !important;
-  font-size: ms(3) !important;
-  text-decoration: underline !important;
-  color: $text-white !important;
-}
+  font-family: inherit;
+  color: $header-text;
+  border: 0 solid $really-dark-blue;
+  transition: all 0.4s ease-in 0.2s;
 
-.modalContent {
-  width: 25% !important;
-  position: absolute !important;
-  top: 50% !important;
-  left: 50% !important;
-  transform: translate(-50%, -50%) !important;
-
-  @media only screen and (max-width: 720px) {
-    width: 75% !important;
+  &:hover {
+  color: $text-white;
+  border-bottom: 0.1em solid $header-text;
+  border-top: 0.1em solid $header-text;
   }
 
-  & > div {
-    border-radius: 10px !important;
-    background-color: $really-dark-blue !important;
+  & > span {
+    font-size: ms(1);
+    color: inherit;
+    transition: 0.5s;
+    z-index: 1;
 
-    background-image: url("http://www.transparenttextures.com/patterns/grey-washed-wall.png") !important;
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+
   }
 }
