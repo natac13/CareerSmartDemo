@@ -1,9 +1,18 @@
 @import '~../../scss/variables';
+@import '~modularscale-sass/stylesheets/modular-scale';
 
 .navWrapper {
   display: flex;
   flex-flow: column;
 
+}
+
+.link {
+  margin: 0.3em !important;
+  padding: 0.2em 0 !important;
+  font-size: ms(3) !important;
+  text-decoration: underline !important;
+  color: $text-white !important;
 }
 
 .modalContent {

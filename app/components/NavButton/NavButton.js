@@ -56,17 +56,6 @@ class NavButton extends Component {
 
         };
 
-        const buttonStyle = {
-            root: {
-                margin: '0.2em'
-            },
-            label: {
-                fontSize: '40px',
-                color: colors.textWhite,
-                textDecoration: 'underline'
-
-            }
-        };
 
 
         return (
@@ -91,27 +80,23 @@ class NavButton extends Component {
                         <FlatButton
                             label="WHO WE ARE"
                             linkButton={true}
-                            href="http://www.careersmarts.ca/team.php"
-                            style={buttonStyle.root}
-                            labelStyle={buttonStyle.label} />
+                            className={style.link}
+                            href="http://www.careersmarts.ca/team.php" />
                         <FlatButton
                             label="WHAT WE DO"
                             linkButton={true}
-                            href="http://www.careersmarts.ca/whatwedo.php"
-                            style={buttonStyle.root}
-                            labelStyle={buttonStyle.label} />
+                            className={style.link}
+                            href="http://www.careersmarts.ca/whatwedo.php" />
                         <FlatButton
                             label="SERVICES"
                             linkButton={true}
-                            href="http://www.careersmarts.ca/career_services.php"
-                            style={buttonStyle.root}
-                            labelStyle={buttonStyle.label} />
+                            className={style.link}
+                            href="http://www.careersmarts.ca/career_services.php" />
                         <FlatButton
                             label="CONTACT"
                             linkButton={true}
-                            href="http://www.careersmarts.ca/contact.php"
-                            style={buttonStyle.root}
-                            labelStyle={buttonStyle.label} />
+                            className={style.link}
+                            href="http://www.careersmarts.ca/contact.php" />
 
                     </div>
 

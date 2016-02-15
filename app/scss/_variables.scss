@@ -3,3 +3,9 @@ $really-dark-blue: #05233C;
 $light-blue: lighten($dark-blue, 30%);
 $shadow: darken($dark-blue, 20%);
 $question-bgcolor: #CFDCE6;
+$text-white: #E9F3F5;
+
+
+// modular scale setup
+$ms-base: 1em;
+$ms-ratio: 1.25;

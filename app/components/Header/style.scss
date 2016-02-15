@@ -1,4 +1,5 @@
 @import '~../../scss/variables';
+@import '~modularscale-sass/stylesheets/modular-scale';
 
 .wrapper {
   display: flex;
@@ -42,7 +43,7 @@
     flex: 2;
     align-self: center;
     text-align: center;
-    font-size: 1.225em;
+    font-size: ms(1);
 
     @media only screen and (max-width: 720px) {
       display: none;
