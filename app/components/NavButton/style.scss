@@ -53,7 +53,7 @@
 .dialog {
   font-family: 'Oswald', sans-serif;
   width: 75vw;
-  height: 50vh;
+  height: 60vh;
   border-radius: 3px;
   background-color: $really-dark-blue;
   // background from http://www.transparenttextures.com/
@@ -73,6 +73,7 @@
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     width: 40vw;
+    height: 50vh;
   }
 
   @media (min-width:64.063em) {
@@ -84,8 +85,9 @@
   section[role='body'] {
     display: flex;
     flex-flow: column;
-    // justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    padding: 1.5rem;
   }
 
   & > nav[role='navigation'] {
@@ -100,6 +102,7 @@
   transition: all 0.4s ease-in;
   transition-delay: 0.1s;
   box-shadow: 0 0 0 $text-white inset;
+  padding: 0;
 
   &:hover {
   color: $text-white;

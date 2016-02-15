@@ -63,7 +63,7 @@
     height: inherit;
     opacity: 1;
     flex: 1 75%;
-    max-width: 550px;
+    max-width: 13.75rem; // 220px/16 base
     margin-right: auto;
     align-self: flex-start;
 
@@ -75,11 +75,12 @@
 
     @media (min-width:30.063em) {
       /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+      max-width: 21.875rem; // 350px/16 base
     }
 
     @media (min-width:40.063em) {
       /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-
+      max-width: 26.25rem; // 420px/16 base
     }
 
     @media (min-width:60.063em) {
