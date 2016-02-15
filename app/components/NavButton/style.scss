@@ -4,7 +4,8 @@
 .navBars {
   color: $really-dark-blue;
   font-size: ms(3);
-  transition: .6s;
+  transition: .5s;
+
 
   &:hover {
     color: lighten($really-dark-blue, 15%);
@@ -27,11 +28,12 @@
 
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    // background: $header-bg;
-    color: $header-text;
+    color: $really-dark-blue;
+    text-shadow: 0 0 5px $text-white;
 
     &:hover {
-      color: $really-dark-blue;
+      color: $header-text;
+      text-shadow: 0 0 0 $text-white;
     }
 
   }
@@ -52,9 +54,11 @@
   font-family: 'Oswald', sans-serif;
   width: 75vw;
   height: 50vh;
-  border-radius: 10px;
+  border-radius: 3px;
   background-color: $really-dark-blue;
-  background-image: url("http://www.transparenttextures.com/patterns/grey-washed-wall.png");
+  // background from http://www.transparenttextures.com/
+  // by:  Wilmotte Bastien
+  background-image: url(../../images/light-mesh.png);
 
   @media (min-width:30.063em) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -80,7 +84,7 @@
   section[role='body'] {
     display: flex;
     flex-flow: column;
-    justify-content: space-around;
+    // justify-content: space-around;
     align-items: center;
   }
 
@@ -93,18 +97,23 @@
   font-family: inherit;
   color: $header-text;
   border: 0 solid $really-dark-blue;
-  transition: all 0.4s ease-in 0.2s;
+  transition: all 0.4s ease-in;
+  transition-delay: 0.1s;
+  box-shadow: 0 0 0 $text-white inset;
 
   &:hover {
   color: $text-white;
-  border-bottom: 0.1em solid $header-text;
-  border-top: 0.1em solid $header-text;
+  // text-decoration: underline;
+  // border-bottom: 0.1em solid $header-text;
+  // border-top: 0.1em solid $header-text;
+  box-shadow: 0 0 13px $text-white inset;
   }
 
   & > span {
     font-size: ms(1);
     color: inherit;
-    transition: 0.5s;
+    text-decoration: inherit;
+    transition: all 0.4s ease-out;
     z-index: 1;
 
 

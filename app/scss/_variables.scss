@@ -4,7 +4,7 @@ $light-blue: lighten($dark-blue, 30%);
 $shadow: darken($dark-blue, 20%);
 
 // Background Colors
-$header-bg: #415465;
+$header-bg: #313F4C;
 $question-bgcolor: #CFDCE6;
 
 // Text Colors
@@ -15,4 +15,29 @@ $header-text: lighten($header-bg, 42%);
 
 // modular scale setup
 $ms-base: 1em;
-$ms-ratio: 1.3333;
+$ms-ratio: 1.25;
+
+// Vertical rhythm check
+@mixin baseline-grid( $line-height:24 ) {
+
+  position: relative;
+
+  &:after {
+    position: absolute;
+    width: auto;
+    height: auto;
+    z-index: 9999;
+    content: '';
+    display: block;
+    pointer-event: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url(http://basehold.it/image.php?height=#{$line-height}) repeat top left;
+  }
+
+  &:active:after {
+    display: none;
+  }
+}

@@ -32,6 +32,8 @@
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     background: $header-bg;
+    // background image from http://www.transparenttextures.com/ by Atle Mo
+    background-image: url(../../images/carbon-fibre.png);
 
   }
 
@@ -110,9 +112,8 @@
     color: $header-text;
     text-transform: uppercase;
     flex: 2;
-    align-self: center;
     text-align: center;
-    font-size: ms(2);
+
 
     @media (min-width:20em) {
       /* smartphones, iPhone, portrait 480x320 phones */

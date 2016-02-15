@@ -33,7 +33,7 @@ class NavButton extends Component {
                 <IconButton
                     className={style.navBars}
                     neutral={false}
-                    onTouchTap={this.handleOpen}>
+                    onClick={this.handleOpen}>
                     <Icon
                         name={this.state.open ? 'times-circle-o' : 'bars'} />
                 </IconButton>
