@@ -10,9 +10,41 @@
   right: 0;
   z-index: 99;
   height: auto;
-  background: $header-bg;
+  background: #fff;
   margin-bottom: 2em;
   padding: 0.5em;
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    background: $header-bg;
+
+  }
+
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
 
   @media only screen and (max-width: 720px) {
     flex-flow: row;
@@ -25,21 +57,55 @@
   }
 
   .logo {
-    display: none;
-    height: 0;
-    opacity: 0;
+    display: inline-block;
+    height: inherit;
+    opacity: 1;
+    flex: 1 75%;
+    max-width: 550px;
+    margin-right: auto;
+    align-self: flex-start;
 
-    @media only screen and (max-width: 720px) {
-      flex: 1;
-      display: inline-block;
-      height: auto;
-      width: 50%;
-      opacity: 1;
-      align-self: center;
+
+    @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
     }
+
+    @media (min-width:30.063em) {
+      /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    }
+
+    @media (min-width:40.063em) {
+      /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+    }
+
+    @media (min-width:60.063em) {
+      /* tablet, landscape iPad, lo-res laptops ands desktops */
+      display: none;
+      height: 0;
+      opacity: 0;
+      // background: $header-bg;
+
+    }
+
+    @media (min-width:64.063em) {
+      /* big landscape tablets, laptops, and desktops */
+
+    }
+
+    @media (min-width:80.063em) {
+      /* hi-res laptops and desktops */
+
+    }
+
+
+
   }
 
   .tagLine {
+    display: none;
+    opacity: 0;
     font-family: 'Oswald', sans-serif;
     color: $header-text;
     text-transform: uppercase;
@@ -48,21 +114,88 @@
     text-align: center;
     font-size: ms(2);
 
+    @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+    }
+
+    @media (min-width:30.063em) {
+      /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+    }
+
+    @media (min-width:40.063em) {
+      /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    }
+
+    @media (min-width:60.063em) {
+      /* tablet, landscape iPad, lo-res laptops ands desktops */
+      // background: $header-bg;
+      display: inline-block;
+      opacity: 1;
+
+    }
+
+    @media (min-width:64.063em) {
+      /* big landscape tablets, laptops, and desktops */
+
+    }
+
+    @media (min-width:80.063em) {
+      /* hi-res laptops and desktops */
+
+    }
+
+
+
+
     @media only screen and (max-width: 720px) {
-      display: none;
-      height: 0;
-      opacity: 0;
     }
 
   }
 
   .navButton {
-    margin-right: 2em;
-    margin-bottom: 1.5em;
+    align-self: center;
+    margin-right: 1em;
 
-    @media only screen and (max-width: 720px) {
-      margin-right: 1em;
+    @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
     }
+
+    @media (min-width:30.063em) {
+      /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+    }
+
+    @media (min-width:40.063em) {
+      /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+      margin-right: 2em;
+
+
+    }
+
+    @media (min-width:60.063em) {
+      /* tablet, landscape iPad, lo-res laptops ands desktops */
+      // background: $header-bg;
+      color: $really-dark-blue;
+
+      &:hover {
+        color: lighten($really-dark-blue, 15%);
+      }
+
+    }
+
+    @media (min-width:64.063em) {
+      /* big landscape tablets, laptops, and desktops */
+
+    }
+
+    @media (min-width:80.063em) {
+      /* hi-res laptops and desktops */
+
+    }
+
   }
   .socials {
     flex: 1;
