@@ -44,7 +44,8 @@ const QuestionBrick = (props) => {
                     floating
                     neutral={false}
                     onTouchTap={handleClick}
-                    className={style.openAnswer} ><Icon name="question-circle" /></IconButton>
+                    icon={<Icon name="question-circle" />}
+                    className={style.openAnswer} ></IconButton>
 
             <div
                 className={props.open ? style.visible : style.hidden}>
