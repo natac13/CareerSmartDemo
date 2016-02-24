@@ -1,0 +1,49 @@
+@import '~../../scss/variables';
+
+.wrapper {
+  background-color: $really-dark-blue;
+  // background-image: url('http://placehold.it/1920x1080');
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+}
+
+.heading {
+
+}
+
+.title {
+
+}
+
+.owner {
+
+}
+
+.nav {
+  margin-top: auto;
+  text-align: center;
+
+  .message {
+
+  }
+
+  .chevronButton {
+    .chevron {
+
+    }
+  }
+}
+
+.next {
+
+}
+

@@ -6,6 +6,11 @@ body {
   font-size: ms(0);
   width: 100vw;
 }
+// needed due to this random input filed getting created with the use of the
+// Button component from react-scroll in Welcome Component
+input[offset="0"] {
+  display: none;
+}
 
 p {
   line-height: 1.5em;

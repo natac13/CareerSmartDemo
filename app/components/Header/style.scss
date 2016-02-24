@@ -31,9 +31,9 @@
 
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    background: $header-bg;
+    background: rgba($header-bg, 0.3);
     // background image from http://www.transparenttextures.com/ by Atle Mo
-    background-image: url(../../images/carbon-fibre.png);
+    // background-image: url(../../images/carbon-fibre.png);
 
   }
 
@@ -159,6 +159,7 @@
   .navButton {
     align-self: center;
     margin-right: 1em;
+    margin-left: auto;
 
     @media (min-width:20em) {
       /* smartphones, iPhone, portrait 480x320 phones */

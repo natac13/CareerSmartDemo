@@ -14,9 +14,9 @@ const Header = (props) => {
                 className={style.logo}
                 src={require('../../images/careers_logo.png')}
                 alt="CareerSmarts Logo" />
-            <h3 className={style.tagLine}>
+{/*            <h3 className={style.tagLine}>
                 Ready for the CareerSmarts Advantage?
-            </h3>
+            </h3>*/}
 {/*            <div className={style.socials}>
                 <a href="#" className={style.social}>
                     <Icon name="twitter-square" />

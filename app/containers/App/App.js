@@ -7,6 +7,7 @@ import ContactForm      from '../../components/ContactForm/';
 import QuestionBrick    from '../../components/QuestionBrick/';
 import QuestionGrouping from '../../components/QuestionGrouping/';
 import Header           from '../../components/Header/';
+import Welcome          from '../../components/Welcome/';
 
 
 import style from './style';
@@ -33,12 +34,16 @@ class App extends Component {
         return (
             <div className={style.app}>
                 <Header />
-                <QuestionGrouping
-                    questionBricks={ questions.take(3) } />
-                <ContactForm
-                    questionsMap={this.props.questionAnswers.get('questions')} />
-                <QuestionGrouping
-                    questionBricks={ questions.takeLast(3) } />
+                <Welcome className={style.welcome}/>
+                <div className={style.engagement}>
+                  <QuestionGrouping
+                      questionBricks={ questions.take(3) } />
+                  <ContactForm
+                      questionsMap={this.props.questionAnswers.get('questions')} />
+                  <QuestionGrouping
+                      questionBricks={ questions.takeLast(3) } />
+
+                </div>
 
             </div>
         );

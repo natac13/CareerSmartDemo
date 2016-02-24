@@ -41,6 +41,7 @@
     "react-pure-render": "1.0.2",
     "react-redux": "4.0.4",
     "react-router": "1.0.3",
+    "react-scroll": "1.0.3",
     "react-tap-event-plugin": "0.2.1",
     "react-toolbox": "0.14.1",
     "redux": "3.1.6",
