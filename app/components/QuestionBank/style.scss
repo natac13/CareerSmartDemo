@@ -1,0 +1,75 @@
+.wrapper {
+  display: flex;
+  align-items: stretch;
+  flex-flow: column nowrap;
+  width: 45%;
+
+}
+
+.questionWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 10em;
+  margin: 0;
+
+  .question,
+  .answerLeft,
+  .answerRight {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+  }
+
+  .question {
+
+  }
+
+  .answerLeft,
+  .answerRight {
+    background: orange;
+    transition: .7s ease-out;
+  }
+
+  .answerLeft {
+    left: -100%;
+  }
+
+  .answerRight {
+    right: -100%;
+  }
+
+  &:hover .answerLeft {
+    left: 0%;
+  }
+
+  &:hover .answerRight {
+    right: 0%;
+  }
+}
+
+.left,
+.right {
+  border-top: 2.5px solid darken($primary-dark, 3%);
+  border-bottom: 2.5px solid darken($primary-dark, 3%);
+
+  &:first-child {
+    border-top: 5px solid darken($primary-dark, 3%);
+  }
+
+  &:last-child {
+    border-bottom: 5px solid darken($primary-dark, 3%);
+  }
+}
+
+.left {
+  border-right: 5px solid darken($primary-dark, 3%);
+  text-align: right;
+}
+
+.right {
+  border-left: 5px solid darken($primary-dark, 3%);
+  text-align: left;
+}

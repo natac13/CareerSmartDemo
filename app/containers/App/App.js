@@ -8,6 +8,7 @@ import QuestionBrick    from '../../components/QuestionBrick/';
 import QuestionGrouping from '../../components/QuestionGrouping/';
 import Header           from '../../components/Header/';
 import Welcome          from '../../components/Welcome/';
+import QuestionBank     from '../../components/QuestionBank/';
 
 
 import style from './style';
@@ -36,13 +37,16 @@ class App extends Component {
         <Header />
         <Welcome className={style.welcome}/>
         <div className={style.engagement}>
-          <QuestionGrouping
+          <QuestionBank side="left" className={style.leftSide}/>
+          <QuestionBank side="right" className={style.rightSide}/>
+
+          {/*<QuestionGrouping
             questionBricks={ questions.take(3) } />
-          {/*<ContactForm
-              questionsMap={this.props.questionAnswers.get('questions')} />*/}
+          <ContactForm
+              questionsMap={this.props.questionAnswers.get('questions')} />
           <QuestionGrouping
             questionBricks={ questions.takeLast(3) } />
-
+*/}
         </div>
 
       </div>
