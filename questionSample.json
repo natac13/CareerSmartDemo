@@ -1,5 +1,4 @@
-{
-    "1" :
+[
     {
         "question": "What can we do for you?",
         "answers": [
@@ -10,7 +9,7 @@
         "open": false,
         "anchorEl": {}
     },
-    "2": {
+    {
         "question": "How does it work?",
         "answers": [
             "We will help you identify and describe your achievements in both your documents and your interview answers",
@@ -19,7 +18,7 @@
         "open": false,
         "anchorEl": {}
     },
-    "3": {
+    {
         "question": "Why choose us?",
         "answers": [
             "We have successfully helped clients across Canada and throughout the United States including Silicon Valley",
@@ -28,7 +27,7 @@
         "open": false,
         "anchorEl": {}
     },
-    "4": {
+    {
         "question": "Can I use the services online from remote locations?",
         "answers": [
             "We are prepared to word with you electronically no matter where you are",
@@ -37,7 +36,7 @@
         "open": false,
         "anchorEl": {}
     },
-    "5": {
+    {
         "question": "Do you offer Career Transition/Outplacement service?",
         "answers": [
             "We have successfully assisted companies to respectfully downsize their staff",
@@ -46,7 +45,7 @@
         "open": false,
         "anchorEl": {}
     },
-    "6": {
+    {
         "question": "What career is right for me?",
         "answers": [
             "We eliminate the confusion about your career direction by using formal tools that clarify your ideal career path"
@@ -54,4 +53,4 @@
         "open": false,
         "anchorEl": {}
     }
-}
+]

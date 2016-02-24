@@ -20,25 +20,33 @@ class App extends Component {
   }
 
   render() {
-    const questions = this.props.questionAnswers.get('questions').map((question, index) => {
-      return (
-        <QuestionBrick
-          key={index}
-          index={index}
-          question={question.get('question')}
-          answers={question.get('answers')}
-          open={question.get('open')}
-          openAnswers={this.props.actions.openAnswers}
-          closeAnswers={this.props.actions.closeAnswers} />
-      );
-    });
+    // const questions = this.props.questions.get('questions').map((question, index) => {
+    //   return (
+    //     <QuestionBrick
+    //       key={index}
+    //       index={index}
+    //       question={question.get('question')}
+    //       answers={question.get('answers')}
+    //       open={question.get('open')}
+    //       openAnswers={this.props.actions.openAnswers}
+    //       closeAnswers={this.props.actions.closeAnswers} />
+    //   );
+    // });
     return (
       <div className={style.app}>
         <Header />
         <Welcome className={style.welcome}/>
         <div className={style.engagement}>
-          <QuestionBank side="left" className={style.leftSide}/>
-          <QuestionBank side="right" className={style.rightSide}/>
+          <QuestionBank
+            side="left"
+            className={style.leftSide}
+            {...this.props}
+            questions={this.props.questions.take(3)} />
+          <QuestionBank
+            side="right"
+            className={style.rightSide}
+            {...this.props}
+            questions={this.props.questions.takeLast(3)} />
 
           {/*<QuestionGrouping
             questionBricks={ questions.take(3) } />
@@ -59,9 +67,9 @@ class App extends Component {
 ========================================*/
 
 function mapStateToProps(state) {
-  const questionAnswers = state.questionAnswers;
+  const questions = state.questions;
   return {
-    questionAnswers
+    questions
     };
 }
 

@@ -6,19 +6,16 @@ import style from './style';
 class QuestionBank extends Component {
   constructor(props) {
     super(props);
-    // prop.side = left/right String
-    // props.questions
-    // props.answers
-    // props.both
+    console.log(props);
   }
 
   render() {
+
     const baseClass = classnames({
       [`${style.questionWrapper}`]: true,
       [`${style.left}`]: this.props.side === 'left',
       [`${style.right}`]: this.props.side === 'right'
     });
-    console.log(this.props);
     const wrapperClass = classnames({
       [`${style.wrapper}`]: true,
       [`${this.props.className}`]: !!this.props.className
@@ -29,23 +26,37 @@ class QuestionBank extends Component {
       [`${style.answerRight}`]: this.props.side === 'right'
     });
 
+    const questionWrappers = this.props.questions.map((question, index) => {
+      console.log(question)
+      const answers = question.get('answers').map((answer, i) => {
+        return (<li key={i}>{answer}</li>);
+      });
+      return (
+        <div
+          key={index}
+          className={baseClass}>
+            <div className={style.questionDiv}>
+              <p className={style.question}>{question.get('question')}</p>
+            </div>
+            <ul
+              className={answerClass}
+              onTouchTap={()=> {/*handle opening*/}}>{answers}</ul>
+        </div>
+      );
+    });
+    console.log(questionWrappers)
+
     return (
         <section className={wrapperClass}>
-          <div className={baseClass}>
-            <p className={style.question}> The question</p>
-            <p className={answerClass}> answer</p>
-          </div>
-          <div className={baseClass}>
-            <p className={style.question}> The question</p>
-            <p className={answerClass}> answer</p>
-          </div>
-          <div className={baseClass}>
-            <p className={style.question}> The question</p>
-            <p className={answerClass}> answer</p>
-          </div>
+          {questionWrappers}
         </section>
     );
   }
 }
 
+QuestionBank.propTypes = {
+  side: PropTypes.oneOf(['left', 'right']).isRequired,
+  className: PropTypes.string,
+
+};
 export default QuestionBank;

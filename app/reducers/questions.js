@@ -12,28 +12,26 @@ import {
 
 import sample from '../../questionSample.json';
 
-const initialState = fromJS({
-    questions: sample
-});
+const initialState = fromJS(sample);
 
 
-const questionAnswers = (state = initialState, action) => {
-    switch (action.type) {
-        // case NEW_QUESTION:
-        //     return state;
-        case OPEN_ANSWERS:
-            return state.set(
-                'questions',
-                openAnswers(state.get('questions'), action)
-            );
-        case CLOSE_ANSWERS:
-            return state.set(
-                'questions',
-                closeAnswers(state.get('questions'), action)
-            );
-        default:
-            return state;
-    }
+const questions = (state = initialState, action) => {
+  switch (action.type) {
+    // case NEW_QUESTION:
+    //     return state;
+    case OPEN_ANSWERS:
+      return state.set(
+          'questions',
+          openAnswers(state.get('questions'), action)
+      );
+    case CLOSE_ANSWERS:
+      return state.set(
+          'questions',
+          closeAnswers(state.get('questions'), action)
+      );
+    default:
+      return state;
+  }
 };
 
-export default questionAnswers;
+export default questions;
