@@ -9,7 +9,6 @@ const TooltipButton = Tooltip(Button);
 const TooltipIconButton = Tooltip(IconButton);
 
 import style from './style';
-import * as colors from '../../scss/colors';
 
 const QuestionBrick = (props) => {
     const { question, answers, open } = props;

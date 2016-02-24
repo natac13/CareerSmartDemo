@@ -29,11 +29,11 @@
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
     color: $really-dark-blue;
-    text-shadow: 0 0 5px $text-white;
+    text-shadow: 0 0 5px $primary-text;
 
     &:hover {
-      color: $header-text;
-      text-shadow: 0 0 0 $text-white;
+      color: $secondary-text;
+      text-shadow: 0 0 0 $primary-text;
     }
 
   }
@@ -97,19 +97,19 @@
 
 .link {
   font-family: inherit;
-  color: $header-text;
+  color: $secondary-text;
   border: 0 solid $really-dark-blue;
   transition: all 0.4s ease-in;
   transition-delay: 0.1s;
-  box-shadow: 0 0 0 $text-white inset;
+  box-shadow: 0 0 0 $primary-text inset;
   padding: 0;
 
   &:hover {
-  color: $text-white;
+  color: $primary-text;
   // text-decoration: underline;
-  // border-bottom: 0.1em solid $header-text;
-  // border-top: 0.1em solid $header-text;
-  box-shadow: 0 0 13px $text-white inset;
+  // border-bottom: 0.1em solid $secondary-text;
+  // border-top: 0.1em solid $secondary-text;
+  box-shadow: 0 0 13px $primary-text inset;
   }
 
   & > span {

@@ -1,16 +1,26 @@
+/// OLD STOP USING ///////////////////
 $dark-blue: #396c97;
 $really-dark-blue: #05233C;
 $light-blue: lighten($dark-blue, 30%);
-$shadow: darken($dark-blue, 20%);
 
 // Background Colors
-$header-bg: #313F4C;
 $question-bgcolor: #CFDCE6;
+////////////////////////////////////
+///
 
 // Text Colors
-$text-white: #E9F3F5;
-$header-text: lighten($header-bg, 42%);
+$primary-text: #E9F3F5;
+$secondary-text: lighten(#333, 42%);
 
+// Monochromatic
+$primary-color: #396c97;
+$primary-dark: #05233c;
+// $primary-dark: #174664;
+$primary-accent: #34a0e3;
+$greyish-blue: #313F4C;
+$primary-contrast: #F5E489;
+
+$shadow: darken($primary-dark, 15%);
 
 
 // modular scale setup

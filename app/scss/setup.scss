@@ -1,5 +1,8 @@
 @import '~modularscale-sass/stylesheets/modular-scale';
 @import '~./variables';
+* {
+  box-sizing: border-box;
+}
 
 body {
   // @include baseline-grid(24);
@@ -17,29 +20,26 @@ p {
 }
 
 h1 {
-  line-height: 1em;
+  line-height: 1.1;
   font-size: ms(5);
 
 }
 
 h2 {
-  line-height: 1em;
+  line-height: 1.2;
   font-size: ms(4);
 }
 
 h3 {
-  line-height: 1.2em;
+  line-height: 1.3;
   font-size: ms(3);
 }
 
 h4 {
-  line-height: 1.2em;
+  line-height: 1.4;
   font-size: ms(2);
 }
 
-* {
-  box-sizing: border-box;
-}
 
 
 @media (min-width:20em) { /* smartphones, iPhone, portrait 480x320 phones */ }

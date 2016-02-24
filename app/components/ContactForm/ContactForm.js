@@ -18,7 +18,6 @@ import { addUser } from '../../actions/';
 
 /*** styling ***/
 import style from './style';
-import * as colors from '../../scss/colors';
 
 const ContactForm = (props) => {
 
@@ -88,10 +87,10 @@ const ContactForm = (props) => {
                 <RaisedButton
                     label="Contact Lionel"
                     labelPosition="before"
-                    disabledBackgroundColor={colors.disabled}
+                    {/*disabledBackgroundColor={colors.disabled}*/}
                     disabled={submitting}
-                    backgroundColor={colors.darkBlue}
-                    labelColor={colors.lightText}
+                    {/*backgroundColor={colors.darkBlue}*/}
+                    {/*labelColor={colors.lightText}*/}
                     fullWidth={true}
                     icon={submitting ?
                         <Icon spin name="spinner" /> :
@@ -100,11 +99,11 @@ const ContactForm = (props) => {
                 <RaisedButton
                     label="Clear Form"
                     labelPosition="before"
-                    disabledBackgroundColor={colors.disabled}
+                    {/*disabledBackgroundColor={colors.disabled}*/}
                     onTouchTap={resetForm}
                     disabled={submitting}
-                    backgroundColor={colors.darkBlue}
-                    labelColor={colors.lightText}
+                    {/*backgroundColor={colors.darkBlue}*/}
+                    {/*labelColor={colors.lightText}*/}
                     fullWidth={true}
                     icon={<Icon name="trash-o" /> }
                     type="button" />

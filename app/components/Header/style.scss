@@ -31,7 +31,7 @@
 
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
-    background: rgba($header-bg, 0.3);
+    background: rgba(#333, 0.3);
     // background image from http://www.transparenttextures.com/ by Atle Mo
     // background-image: url(../../images/carbon-fibre.png);
 
@@ -110,7 +110,7 @@
     display: none;
     opacity: 0;
     font-family: 'Oswald', sans-serif;
-    color: $header-text;
+    color: $secondary-text;
     text-transform: uppercase;
     flex: 2;
     text-align: center;

@@ -1,10 +1,12 @@
 @import '~../../scss/variables';
-
 .wrapper {
-  background-color: $really-dark-blue;
-  // background-image: url('http://placehold.it/1920x1080');
+  align-items: center;
+  background-image: linear-gradient(rgba(0, 0, 0, .4), rgba(0, 0, 0, .6)),
+                    url('../../images/desk-bg.png');
   background-position: center;
   background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   right: 0;
@@ -12,32 +14,59 @@
   left: 0;
   display: flex;
   flex-flow: column;
-  align-items: center;
+  text-align: center;
 
 }
 
 .heading {
-
+  font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
+  margin-top: auto;
+  max-width: 600px;
+  width: 75%;
+  color: $primary-text;
 }
 
 .title {
+  letter-spacing: 2px;
+  margin-bottom: 0.3em;
+  text-transform: uppercase;
+  border-bottom: 1px solid $primary-text;
+  color: inherit;
+  text-shadow: 0 0 5px $shadow;
 
 }
 
 .owner {
-
+  color: grayscale(darken($primary-text, 32%));
+  text-shadow: 0 0 5px $shadow;
+  position: absolute;
+  transform: rotate(270deg);
+  left: -3em;
+  top: 30%;
 }
 
 .nav {
-  margin-top: auto;
-  text-align: center;
+  margin-top: 3em;
+  color: $primary-text;
 
   .message {
 
   }
 
   .chevronButton {
+    width: auto;
+    height: auto;
+    margin-bottom: 0.75em;
+    box-shadow: 0 0 0 0 $shadow;
+    transition: .4s ease-in-out;
+
+    &:hover {
+      color: lighten($primary-dark, 23%);
+      box-shadow: 0 0 13px 1px $shadow;
+    }
     .chevron {
+      color: $primary-dark;
+      font-size: 1.5em;
 
     }
   }

@@ -1,4 +1,4 @@
--loader'use strict';
+'use strict';
 
 
 const path = require('path');
@@ -15,8 +15,10 @@ module.exports = {
     // real source-map for production
     devtool: 'source-map',
     entry: [
-        // the main application script
-        entry
+      // sets up an ES6-ish environment with promise support
+      'babel-polyfill',
+      // the main application script
+      entry
     ],
     output: {
         path: buildPath,
@@ -42,7 +44,7 @@ module.exports = {
             },
             {
                 test: /\.scss$/,
-                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass')
+                loader: ExtractTextPlugin.extract('style-loader', 'css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss!sass!toolbox')
 
             },
             {
@@ -71,6 +73,7 @@ module.exports = {
         ]
     },
     postcss: [autoprefixer],
+    toolbox: { theme: 'theme.scss' },
     plugins: [
         new ExtractTextPlugin('style.css', { allChunk: true }),
         new HtmlWebpackPlugin({
