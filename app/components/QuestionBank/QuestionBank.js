@@ -1,6 +1,8 @@
 import React, { Component, PropTypes } from 'react';
 import classnames from 'classnames';
 
+import Icon from 'react-fa';
+
 import style from './style';
 
 class QuestionBank extends Component {
@@ -36,9 +38,10 @@ class QuestionBank extends Component {
       [`${style.answerRight}`]: this.props.side === 'right'
     });
 
+
     const questionWrappers = this.props.questions.map((question, index) => {
       const answers = question.get('answers').map((answer, i) => {
-        return (<li key={i}>{answer}</li>);
+        return (<li className={style.answerItem} key={i}>{answer}</li>);
       });
 
       return (
@@ -48,9 +51,16 @@ class QuestionBank extends Component {
             <div className={style.questionDiv}>
               <p className={style.question}>{question.get('question')}</p>
             </div>
-            <ul
+            <div
               className={answerClass}
-              onClick={this.handleClick.bind(this, question.get('open'), index)}>{answers}</ul>
+              onClick={this.handleClick.bind(this, question.get('open'), index)}>
+              <div className={style.pullTab}>
+                  <Icon name="question" />
+              </div>
+              <ul>
+                {answers}
+              </ul>
+            </div>
         </div>
       );
     });

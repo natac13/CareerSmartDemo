@@ -4,10 +4,21 @@
   box-sizing: border-box;
 }
 
+html {
+    overflow: scroll;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 0px;  /* remove scrollbar space */
+    background: transparent;  /* optional: just make scrollbar invisible */
+}
+
+
 body {
   // @include baseline-grid(24);
   font-size: ms(0);
   width: 100vw;
+
 }
 // needed due to this random input filed getting created with the use of the
 // Button component from react-scroll in Welcome Component
@@ -15,8 +26,10 @@ input[offset="0"] {
   display: none;
 }
 
-p {
+p,
+li {
   line-height: 1.5em;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {

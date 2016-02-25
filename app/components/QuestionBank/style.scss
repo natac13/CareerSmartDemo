@@ -22,9 +22,6 @@
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     width: 45%;
     margin: 0;
-
-
-
   }
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -44,42 +41,8 @@
 .questionWrapper {
   position: relative;
   overflow: hidden;
-  height: 10em;
+  height: 8em;
   margin: 0;
-
-  .questionDiv,
-  .answerLeft,
-  .answerRight {
-    position: absolute;
-    display: block;
-    width: 100%;
-    height: 100%;
-    margin: 0;
-
-  }
-
-  .questionDiv {
-    display: flex;
-    justify-content: center;
-
-    .question {
-      align-self: center;
-    }
-  }
-
-  .answerLeft,
-  .answerRight {
-    background: $primary-accent;
-    transition: .7s ease-out;
-  }
-
-  .answerLeft {
-    left: -100%;
-  }
-
-  .answerRight {
-    right: -100%;
-  }
 
   &:hover .answerLeft,
   &:focus .answerLeft {
@@ -90,7 +53,114 @@
   &:focus .answerRight {
     right: 0%;
   }
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    height: 10em;
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
 }
+
+.questionDiv,
+.answerLeft,
+.answerRight {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  cursor: pointer;
+
+}
+
+.questionDiv {
+  display: flex;
+  justify-content: center;
+
+
+}
+
+.question {
+  align-self: center;
+  font-size: ms(2);
+}
+
+.pullTab {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: $primary-dark;
+  color: lighten($primary-dark, 13%);
+  font-size: ms(2);
+}
+
+.answerLeft,
+.answerRight {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .7s ease-out;
+
+  & ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.answerLeft {
+  left: -95%;
+  background-image: linear-gradient(to left, $primary-dark, $primary-accent 23%, #ddd 120%);
+
+  & > div[class^="style__pullTab"] { // .pullTab positioning
+    right: 0;
+  }
+
+  & ul {
+    padding-right: 2em;
+  }
+
+}
+
+.answerRight {
+  right: -95%;
+  background-image: linear-gradient(to right, $primary-dark, $primary-accent 23%, #ddd 120%);
+
+  & > div[class^="style__pullTab"] { // .pullTab positioning
+    left: 0;
+  }
+
+  & ul {
+    padding-left: 2em;
+  }
+}
+
+.answerItem {
+  max-width: 600px;
+}
+
 
 .left,
 .right {

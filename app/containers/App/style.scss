@@ -24,7 +24,7 @@
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 200vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -41,6 +41,7 @@
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     flex-flow: row;
+    height: 100vh;
 
   }
   @media (min-width:60.063em) {

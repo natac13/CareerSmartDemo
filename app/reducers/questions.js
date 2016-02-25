@@ -12,7 +12,7 @@ import {
     closeAll
 } from '../js/core-questions';
 
-import sample from '../../questionSample.json';
+import sample from '../../sample.json';
 
 const initialState = fromJS(sample);
 

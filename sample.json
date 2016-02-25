@@ -1,0 +1,51 @@
+[
+    {
+        "question": "What can we do for you?",
+        "answers": [
+            "Build cover letters &#38; resumes that result in interviews",
+            "Coach you on interview performance to impress employers",
+            "Coach you on how to negotiate"
+        ],
+        "open": false
+    },
+    {
+        "question": "How does it work?",
+        "answers": [
+            "Identify &amp; describe your achievements, both in the resume &amp; interview answers",
+            "Your achievements are prove of skills employers are seeking"
+        ],
+        "open": false
+    },
+    {
+        "question": "Why choose us?",
+        "answers": [
+            "Successfully helped clients across North America including Silicon Valley",
+            "Our services can take you anywhere in the world"
+        ],
+        "open": false
+    },
+    {
+        "question": "Can I use the services online from remote locations?",
+        "answers": [
+            "Yes, we are prepared for Skype sessions",
+            "Technology, allows us to personalize the service anywhere"
+        ],
+        "open": false
+    },
+    {
+        "question": "Do you offer Career Transition/Outplacement service?",
+        "answers": [
+            "We have successfully assisted companies to respectfully downsize their staff",
+            "Our out placement packages include the full range of services"
+        ],
+        "open": false
+    },
+    {
+        "question": "What career is right for me?",
+        "answers": [
+            "We eliminate the confusion about your career direction",
+            "We use formal tools that clarify your ideal career path"
+        ],
+        "open": false
+    }
+]
