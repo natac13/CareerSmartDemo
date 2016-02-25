@@ -147,7 +147,19 @@
 
   }
 }
+@keyframes pulse {
+  0% {
+    color: $primary-color;
+  }
 
+  50% {
+    color: darken($primary-color, 8%);
+  }
+
+  100% {
+    color: $primary-color;
+  }
+}
 .nav {
   margin-top: 3em;
   color: $primary-text;
@@ -168,7 +180,7 @@
       box-shadow: 0 0 13px 1px $shadow;
     }
     .chevron {
-      color: $primary-dark;
+      animation: pulse 2.5s infinite;
       font-size: 1.5em;
 
     }
