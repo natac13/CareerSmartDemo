@@ -1,9 +1,11 @@
 import { createAction } from 'redux-actions';
 
 import {
-    OPEN_ANSWERS,
-    CLOSE_ANSWERS
+    OPEN,
+    CLOSE,
+    CLOSE_ALL
 } from '../constants/';
 
-export const openAnswers = createAction(OPEN_ANSWERS);
-export const closeAnswers = createAction(CLOSE_ANSWERS);
+export const open = createAction(OPEN);
+export const close = createAction(CLOSE);
+export const closeAll = createAction(CLOSE_ALL);

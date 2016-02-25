@@ -3,9 +3,7 @@ import { connect }            from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as ActionCreators    from '../../actions';
 
-// import ContactForm      from '../../components/ContactForm/';
-import QuestionBrick    from '../../components/QuestionBrick/';
-import QuestionGrouping from '../../components/QuestionGrouping/';
+import ContactForm      from '../../components/ContactForm/';
 import Header           from '../../components/Header/';
 import Welcome          from '../../components/Welcome/';
 import QuestionBank     from '../../components/QuestionBank/';
@@ -20,18 +18,10 @@ class App extends Component {
   }
 
   render() {
-    // const questions = this.props.questions.get('questions').map((question, index) => {
-    //   return (
-    //     <QuestionBrick
-    //       key={index}
-    //       index={index}
-    //       question={question.get('question')}
-    //       answers={question.get('answers')}
-    //       open={question.get('open')}
-    //       openAnswers={this.props.actions.openAnswers}
-    //       closeAnswers={this.props.actions.closeAnswers} />
-    //   );
-    // });
+    const {
+      actions,
+      questions
+    } = this.props;
     return (
       <div className={style.app}>
         <Header />
@@ -40,21 +30,23 @@ class App extends Component {
           <QuestionBank
             side="left"
             className={style.leftSide}
+            open={actions.open}
+            close={actions.close}
             {...this.props}
-            questions={this.props.questions.take(3)} />
+            questions={questions.take(3)} />
           <QuestionBank
             side="right"
             className={style.rightSide}
+            open={actions.open}
+            close={actions.close}
             {...this.props}
-            questions={this.props.questions.takeLast(3)} />
+            questions={questions.takeLast(3)} />
 
-          {/*<QuestionGrouping
-            questionBricks={ questions.take(3) } />
+
           <ContactForm
-              questionsMap={this.props.questionAnswers.get('questions')} />
-          <QuestionGrouping
-            questionBricks={ questions.takeLast(3) } />
-*/}
+              questions={questions}
+              closeAll={actions.closeAll} />
+
         </div>
 
       </div>

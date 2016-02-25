@@ -9,6 +9,16 @@ class QuestionBank extends Component {
     console.log(props);
   }
 
+  handleClick(open, qa, event) {
+    // event.preventDefault();
+    if (!open) {
+      this.props.open(qa);
+    } else {
+      this.props.close(qa);
+    }
+
+  }
+
   render() {
 
     const baseClass = classnames({
@@ -27,10 +37,10 @@ class QuestionBank extends Component {
     });
 
     const questionWrappers = this.props.questions.map((question, index) => {
-      console.log(question)
       const answers = question.get('answers').map((answer, i) => {
         return (<li key={i}>{answer}</li>);
       });
+
       return (
         <div
           key={index}
@@ -40,11 +50,10 @@ class QuestionBank extends Component {
             </div>
             <ul
               className={answerClass}
-              onTouchTap={()=> {/*handle opening*/}}>{answers}</ul>
+              onClick={this.handleClick.bind(this, question.get('open'), index)}>{answers}</ul>
         </div>
       );
     });
-    console.log(questionWrappers)
 
     return (
         <section className={wrapperClass}>

@@ -1,2 +1,3 @@
-export const OPEN_ANSWERS = 'OPEN_ANSWERS';
-export const CLOSE_ANSWERS = 'CLOSE_ANSWERS';
+export const OPEN = 'OPEN';
+export const CLOSE = 'CLOSE';
+export const CLOSE_ALL = 'CLOSE_ALL';
