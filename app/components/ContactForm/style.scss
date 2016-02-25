@@ -1,38 +1,152 @@
-@import '~../../scss/variables';
-@import '~modularscale-sass/stylesheets/modular-scale';
+.wrapper {
+  background: lighten($primary-contrast, 18%);
+  width: 93vw;
+  max-width: 700px;
+
+  & > section {
+    // this is the padding around the body of the dialog
+    padding: 0
+  }
+
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    width: 65vw;
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
+}
 
 .form {
-  padding: 0.5em 1em 1.5em 1em;
+  align-items: stretch;
   border-radius: 13px;
   flex: 1 20em;
   display: flex;
   flex-flow: column;
-  align-items: flex-start;
   overflow-y: hidden;
+  padding: 0 1em ;
   transition: .5s ease-in;
 
+  & > div[data-react-toolbox="input"] {
+    margin-left: 2.6rem;
+    margin-right: 0;
+  }
+
+  & span[class^="style__icon"] {
+    font-size: 1.3rem !important;
+  }
+
+  & [class^="style__input"] {
+    color: #333;
+  }
+
+    @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    align-items: stretch;
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
 }
 
-.visible {
-  background: lighten($question-bgcolor, 5%);
-  box-shadow: 0 0 23px darkslategrey;
-  opacity: 1;
-  width: auto;
-  margin: 1em auto;
-  transform: rotateY(0deg) rotateZ(0deg) scale(1);
+
+.btnGroup {
+  display: flex;
+  flex-flow: column nowrap;
+  align-self: stretch;
+  justify-content: space-between;
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
 }
 
-.hidden {
-  transform: rotateY(-180deg) rotateZ(60deg) scale(0.5);
-  box-shadow: none;
-  opacity: 0;
-  margin: 0;
-  padding: 0;
-}
-.wrapper {
-  align-self: center;
-  perspective: 1000px;
-  z-index: 99;
-  width: 23em;
+.button {
+  width: 100%;
+  font-size: 1.2rem;
 
+  &:first-child {
+    margin-bottom: 0.5em;
+  }
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    font-size: 1.4rem;
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
 }

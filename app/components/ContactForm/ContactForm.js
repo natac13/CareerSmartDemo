@@ -28,13 +28,25 @@ import style from './style';
 
 const ContactForm = (props) => {
 
+  const {
+    fields: { name, email, situation },
+    handleSubmit,
+    submitting,
+    resetForm,
+    questions,
+    closeAll,
+    className
+  } = props;
+
   const submit = (values, dispatch) => {
+
     // return a promise so that the submitting value gets updated from
     // redux-from.
     return new Promise((resolve, reject) => {
       const actionObj = dispatch(addUser(values));
       if (actionObj.error !== true) {
         setTimeout(() => {
+          closeAll(questions);
           resolve();
         }, 1000); // simulate latency
       } else {
@@ -49,19 +61,10 @@ const ContactForm = (props) => {
 
   };
 
-  const {
-    fields: { name, email, situation },
-    handleSubmit,
-    submitting,
-    resetForm,
-    questions,
-    closeAll
-  } = props;
 
   const formClass = classnames({
     [style.form]: true,
-    [style.visible]: checkAnyOpen(questions),
-    [style.hidden]: !checkAnyOpen(questions)
+    [className]: !!className
   });
   console.log(props)
   return (
@@ -70,59 +73,68 @@ const ContactForm = (props) => {
       onOverlayClick={() => closeAll(questions)}
       className={style.wrapper}>
 
-      {/*<form
-          role="form"
-          className={formClass}
-          id="contact"
-          onSubmit={handleSubmit(submit)} >
-          <TextField
-              hintText="Your Name"
-              type="text"
-              floatingLabelText="Enter Full Name"
-              fullWidth={true}
-              {...name} />
+      <form
+        role="form"
+        className={formClass}
+        onSubmit={handleSubmit(submit)}>
 
-          <TextField
-              hintText="Email Address"
-              type="email"
-              floatingLabelText="Enter Your Email"
-              fullWidth={true}
-              {...email} />
+        <Input
+          type="text"
+          label="Enter Name"
+          icon={<Icon name="user" />}
+          {...name} />
 
-          <TextField
-              hintText="Your personal story..."
-              type="text"
-              multiLine={true}
-              floatingLabelText="Enter Personal Situation"
-              fullWidth={true}
-              {...situation} />
-          <RaisedButton
-              label="Contact Lionel"
-              labelPosition="before"
+        <Input
+          type="text"
+          label="Enter Email"
+          icon={<Icon name="envelope" />}
+          {...email} />
+
+        <Input
+          type="text"
+          label="Your Situation"
+          multiline={true}
+          icon={<Icon name="file-text" />}
+          {...situation} />
+
+          <div className={style.btnGroup}>
+
+            <Button
+              raised
+              className={style.button}
+              type="submit"
               disabled={submitting}
-              fullWidth={true}
               icon={submitting ?
-                  <Icon spin name="spinner" /> :
-                  <Icon name="paper-plane-o"/>}
-              type="submit" />
-          <RaisedButton
-              label="Clear Form"
-              labelPosition="before"
-              onTouchTap={resetForm}
+                <Icon spin name="spinner" />   :
+                <Icon name="paper-plane-o" />}
+              label="Submit"
+              primary
+              neutral={true} />
+
+            <Button
+              raised
+              className={style.button}
+              type="button"
               disabled={submitting}
-              fullWidth={true}
-              icon={<Icon name="trash-o" /> }
-              type="button" />
+              icon={<Icon name="trash-o" />}
+              label="Cancel"
+              primary
+              netural={true}
+              onClick={() => {
+                resetForm();
+                closeAll(questions);
+              }} />
+          </div>
+        </form>
 
-
-      </form>*/}
     </Dialog>
   );
 };
 
 ContactForm.propTypes = {
   questions: ImmutablePropTypes.listOf(ImmutablePropTypes.map).isRequired,
-  closeAll: PropTypes.func.isRequired
+  closeAll: PropTypes.func.isRequired,
+  className: PropTypes.string
 };
 
 export default reduxForm({
