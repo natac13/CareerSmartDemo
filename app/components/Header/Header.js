@@ -12,12 +12,9 @@ const Header = (props) => {
         <header className={style.wrapper}>
             <img
                 className={style.logo}
-                src={require('../../images/careers_logo.png')}
+                src={require('../../images/career_smarts_logo.png')}
                 alt="CareerSmarts Logo" />
-{/*            <h3 className={style.tagLine}>
-                Ready for the CareerSmarts Advantage?
-            </h3>*/}
-{/*            <div className={style.socials}>
+           <div className={style.socials}>
                 <a href="#" className={style.social}>
                     <Icon name="twitter-square" />
                 </a>
@@ -33,7 +30,7 @@ const Header = (props) => {
 
                 </a>
 
-            </div>*/}
+            </div>
             <div className={style.navButton} >
                 <NavButton />
 
