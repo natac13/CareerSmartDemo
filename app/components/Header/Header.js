@@ -18,7 +18,9 @@ const Header = (props) => {
                 <a href="#" className={style.social}>
                     <Icon name="twitter-square" />
                 </a>
-                <a href="#" className={style.social}>
+                <a
+                  href="https://www.linkedin.com/in/lionel-desjardins-6a975a1a"
+                  className={style.social}>
                     <Icon name="linkedin-square" />
 
                 </a>
