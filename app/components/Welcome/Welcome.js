@@ -4,6 +4,7 @@ import { IconButton } from 'react-toolbox';
 import Icon from 'react-fa';
 import { Button, Element } from 'react-scroll';
 
+import smoothScroll from 'smoothscroll';
 
 import style from './style';
 
@@ -19,20 +20,25 @@ const Welcome = (props) => {
 
       <div className={style.nav}>
         <p className={style.message}>Ready for the Advantage?</p>
-        <Button
-          to="next"
-          smooth={true}
-          offset={0}
-          duration={723} >
+        {/*<Button*/}
+          {/*to="next"*/}
+          {/*smooth={true}*/}
+          {/*offset={0}*/}
+          {/*duration={723} >*/}
             <IconButton
               className={style.chevronButton}
+              onClick={() => {
+                console.log(document.querySelector('#marker'));
+                smoothScroll(document.querySelector('#marker'), 1500);
+              }}
               icon={<Icon className={style.chevron} name="chevron-down" />}
               floating/>
 
-          </Button>
+          {/*</Button>*/}
       </div>
 
-      <Element name="next" className={style.next} ></Element>
+      {/*<Element name="next" className={style.next} ></Element>*/}
+      <div id="marker"></div>
     </section>
   );
 };
