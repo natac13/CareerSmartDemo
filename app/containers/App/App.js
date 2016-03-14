@@ -62,14 +62,14 @@ function mapStateToProps(state) {
   const questions = state.questions;
   return {
     questions
-    };
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     actions: bindActionCreators(ActionCreators, dispatch),
     dispatch
-    };
+  };
 }
 
 export default connect(
