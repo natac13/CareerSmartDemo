@@ -1,18 +1,18 @@
 import { fromJS } from 'immutable';
 
 import {
-    OPEN,
-    CLOSE,
-    CLOSE_ALL
+  OPEN,
+  CLOSE,
+  CLOSE_ALL,
 } from '../constants/';
 
 import {
-    openAnswers,
-    closeAnswers,
-    closeAll
+  openAnswers,
+  closeAnswers,
+  closeAll,
 } from '../js/core-questions';
 
-import sample from '../../sample.json';
+import sample from '../resources/questions.json';
 
 const initialState = fromJS(sample);
 

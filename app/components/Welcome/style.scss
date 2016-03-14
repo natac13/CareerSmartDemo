@@ -111,6 +111,11 @@
   }
 
 }
+.bar {
+  display: flex;
+  width: 100%;
+  margin-top: 6rem;
+}
 
 .owner {
   color: grayscale(darken($primary-text, 32%));
@@ -132,7 +137,9 @@
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     font-size: ms(3);
-    top: 15rem;
+    margin: auto;
+    position: initial;
+    transform: rotate(0deg);
   }
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -147,6 +154,7 @@
 
   }
 }
+
 @keyframes pulse {
   0% {
     color: $primary-color;
@@ -187,7 +195,7 @@
   }
 }
 
-.next {
-
+.testimonials {
+  margin: auto;
 }
 

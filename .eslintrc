@@ -1,5 +1,5 @@
 {
-  "extends": "eslint:recommended",
+  "extends": "airbnb",
   "ecmaFeatures": {
     "jsx": true,
     "modules": true
@@ -10,27 +10,6 @@
     "es6": true,
   },
   "parser": "babel-eslint",
-  "rules": {
-    "indent": [2, 2, {"SwitchCase": 1}],
-    "quotes": [2, "single"],
-    "jsx-quotes": [ 2, "prefer-double" ],
-    "no-multiple-empty-lines": 2,
-    "no-console": 0,
-    "no-unused-vars": 1,
-    "object-curly-spacing": [ 2, "always" ],
-    "semi": [2, "always"],
-    "strict": [2, "never"],
-    "space-before-blocks": [ 2, "always" ],
-    "space-before-function-paren": [ 2, { "anonymous": "always", "named": "never" } ],
-    "babel/generator-star-spacing": 1,
-    "babel/new-cap": 0,
-    "babel/object-shorthand": 1,
-    "babel/arrow-parens": 1,
-    "babel/no-await-in-loop": 1,
-    "react/jsx-uses-react": 2,
-    "react/jsx-uses-vars": 2,
-    "react/react-in-jsx-scope": 2
-  },
   "plugins": [
     "babel",
     "react"
