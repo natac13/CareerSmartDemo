@@ -136,8 +136,10 @@
 
 .socials {
   position: absolute;
-  top: 5rem;
-  left: 85vw;
+  top: 4rem;
+  left: 50%;
+  transform: translate(-50%, 0);
+  display: flex;
   flex-flow: row;
   align-self: flex-end;
   justify-content: space-between;

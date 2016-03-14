@@ -26,12 +26,14 @@ function Testimonials(props) {
   return (
     <div className={`${className} ${style.wrapper}`}>
       <Button
-        className={style.testimonials}
-        neutral={false}
+        className={style.showTestimonials}
         label="Real Testimonials"
         onClick={testimonialsOpen}
         flat
+        primary
       />
+
+
       <Drawer
         active={isTestimonialsOpen}
         type={'right'}

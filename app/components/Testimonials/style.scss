@@ -1,3 +1,69 @@
+.wrapper {
+  width: 100%;
+}
+.showTestimonials {
+  font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
+  font-size: ms(0);
+  letter-spacing: .07em;
+  width: 100%;
+  position: absolute;
+  left: 40vw;
+  top: 13rem;
+  transform: rotate(90deg);
+
+  span:first-child::after {
+    content: "\F077";
+    font-family: 'Fontawesome';
+    font-weight: normal;
+    text-decoration: inherit;
+    color: $primary-color;
+    font-size: inherit;
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    position: initial;
+    display: initial;
+    font-size: ms(3);
+    letter-spacing: .1em;
+    transform: rotate(0deg);
+
+    span:first-child::after {
+      content: "\f054";
+      font-family: 'Fontawesome';
+      padding-left: 10rem;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+    }
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+}
+
+
 .drawer {
   width: 85%;
 
@@ -37,8 +103,20 @@
 .testimonial {
   font-size: ms(-1);
 
-    @media (min-width:20em) {
-      /* smartphones, iPhone, portrait 480x320 phones */
+  &:first-letter {
+    font-size: ms(3);
+    font-weight: 700;
+    padding: 5px 8px 0 3px;
+    float: left;
+    color: $primary-color;
+  }
+
+  &:first-line {
+    font-weight: 700;
+  }
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
 
   }
   @media (min-width:30.063em) {
@@ -48,6 +126,10 @@
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     font-size: ms(1);
+    line-height: 1.7;
+    &:first-letter {
+      padding-top: 0;
+    }
   }
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
