@@ -4,6 +4,8 @@ import ImmuablePropTypes from 'react-immutable-proptypes';
 import { IconButton } from 'react-toolbox';
 import Icon from 'react-fa';
 import Testimonials from '../Testimonials/';
+import Enticement from '../Enticement/';
+
 import smoothScroll from 'smoothscroll';
 
 import style from './style';
@@ -30,14 +32,16 @@ const Welcome = (props) => {
           testimonialsOpen={testimonialsOpen}
           testimonialsClose={testimonialsClose}
         />
-
       </div>
-      <header className={style.heading}>
+
+      <Enticement />
+
+      {/*<header className={style.heading}>
         <h1 className={style.title}>Career Smarts</h1>
-      </header>
+      </header>*/}
 
       <div className={style.nav}>
-        <p className={style.message}>Ready for the Advantage?</p>
+        {/*<p className={style.message}>Ready for the Advantage?</p>*/}
           <IconButton
             className={style.chevronButton}
             onClick={handleScroll}
@@ -45,6 +49,8 @@ const Welcome = (props) => {
             floating
           />
       </div>
+
+
 
 
       <div id="marker"></div>

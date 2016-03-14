@@ -10,7 +10,7 @@
   right: 0;
   z-index: 99;
   height: auto;
-  background: rgba(0, 0, 0, .5);
+  background: #fff;
   margin-bottom: 2em;
   padding: 0.5em;
   flex-flow: row;
@@ -136,7 +136,7 @@
 
 .socials {
   position: absolute;
-  top: 4rem;
+  top: 3rem;
   left: 50%;
   transform: translate(-50%, 0);
   display: flex;
@@ -144,13 +144,14 @@
   align-self: flex-end;
   justify-content: space-between;
 
+  display: none;
   .social {
     display: inline-block;
     margin: 0.33em;
     width: 1em;
     flex: 1;
     color: lighten($primary-dark, 8%);
-    font-size: ms(2);
+    font-size: ms(1);
 
 
     &:hover,
