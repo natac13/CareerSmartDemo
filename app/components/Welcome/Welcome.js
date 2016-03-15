@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import ImmuablePropTypes from 'react-immutable-proptypes';
 
-import { IconButton } from 'react-toolbox';
+import { Button, IconButton } from 'react-toolbox/lib/button';
 import Icon from 'react-fa';
 import Testimonials from '../Testimonials/';
 import Enticement from '../Enticement/';
@@ -25,7 +25,13 @@ const Welcome = (props) => {
     <section className={ `${style.wrapper} ${props.className}` }>
 
       <div className={style.bar}>
-        <h3 className={style.owner}>Lionel Desjardins</h3>
+        {/*<h3 className={style.owner}>Lionel Desjardins</h3>*/}
+        <Button
+          className={style.owner}
+          onClick={handleScroll}
+          label="Lionel Desjardins"
+          primary
+        />
         <Testimonials
           className={style.testimonials}
           testimonials={testimonials}
@@ -45,10 +51,6 @@ const Welcome = (props) => {
             floating
           />
       </div>
-
-
-
-
       <div id="marker"></div>
     </section>
   );

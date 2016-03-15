@@ -79,15 +79,20 @@
 .owner {
   font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
   color: $silver-text;
-  text-shadow: 0 0 3px $shadow;
   position: absolute;
   transform: rotate(270deg);
   width: 100%;
   right: 45vw;
   top: 13rem;
   font-size: ms(0);
-  letter-spacing: 2px;
   z-index: 13;
+
+
+  span:first-child {
+    letter-spacing: 2px;
+    color: $greyish-blue;
+    text-transform: none;
+  }
 
   @media (min-width:20em) {
       /* smartphones, iPhone, portrait 480x320 phones */
@@ -106,8 +111,14 @@
     font-size: ms(3);
     width: 100%;
     margin: auto;
+    display: initial;
     position: initial;
     transform: rotate(0deg);
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
   @media (min-width:64.063em) {
     /* big landscape tablets, laptops, and desktops */
@@ -147,11 +158,9 @@
     transition: .4s ease-in-out;
 
     &:hover {
-      color: lighten($primary-dark, 23%);
-      box-shadow: 0 0 13px 1px $shadow;
+      color: $greyish-blue;
     }
     .chevron {
-      animation: pulse 2.5s infinite;
       font-size: 1.5em;
 
     }

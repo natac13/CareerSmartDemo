@@ -1,10 +1,10 @@
 .wrapper {
   width: 100%;
 }
+
 .showTestimonials {
   font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
   font-size: ms(1);
-  letter-spacing: 2px;
   width: 100%;
   position: absolute;
   left: 40vw;
@@ -12,10 +12,10 @@
   transform: rotate(90deg);
   z-index: 13;
 
+
   span:first-child {
-    color: $silver-text;
-    font-weight: bold;
-    text-shadow: 0 0 3px $shadow;
+    letter-spacing: 2px;
+    color: $greyish-blue;
     text-transform: none;
   }
 
@@ -24,7 +24,7 @@
     font-family: 'Fontawesome';
     font-weight: normal;
     text-decoration: inherit;
-    color: $silver-text;
+    color: $greyish-blue;
     text-shadow: 0 0 3px $shadow;
     font-size: inherit;
     position: absolute;
@@ -50,8 +50,14 @@
     position: initial;
     display: initial;
     font-size: ms(3);
+    width: 100%;
     transform: rotate(0deg);
     margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
 
     span:first-child::after {
       content: "\f054";
