@@ -5,7 +5,169 @@
   width: 100%;
   height: 100%;
   justify-content: space-around;
+
+  &::before {
+
+  }
+
+  &::after {
+
+  }
+
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    &:before {
+      height: 80vh;
+      top: 40vh
+    }
+
+    &:after {
+      height: 80vh;
+      bottom: 0;
+    }
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
 }
+
+.bgPic1,
+.bgPic2,
+.bgPic3 {
+  content: "";
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 55vh;
+  opacity: .2;
+
+}
+.bgPic1 {
+  background-image: url('../../images/withoutdirection.png');
+  background-position: 15% center;
+  top: 10vh;
+
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    background-position-y: 15%;
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    height: 60vh;
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+}
+
+.bgPic2 {
+  background-image: url('../../images/interview.png');
+  top: 65vh;
+
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    top: 70vh;
+    height: 60vh;
+    background-position-y: 30%
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+}
+
+.bgPic3 {
+  background-image: url('../../images/hired.png');
+  top: 120vh;
+
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    top: 130vh;
+    height: 60vh;
+    background-position-y: 15%;
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
+
+}
+
 
 .enticement {
   font-size: ms(0);
@@ -13,19 +175,57 @@
   line-height: 1.7;
   margin: 0;
   width: 65%;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  z-index: 1;
+
+
+
 
   &:nth-child(1),
-  &:nth-child(2),
-  &:nth-child(3) {
-    color: $secondary-text;
-    border-bottom: 1px solid $secondary-text;
+  &:nth-child(2) {
+    border-bottom: 2px solid white;
   }
-
-  &:nth-child(4),
-  &:nth-child(5),
-  &:nth-child(6) {
-    color: darken($secondary-text, 65%);
-    border-bottom: 1px solid darken($secondary-text, 65%);
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
 
   }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    width: 40%;
+    padding: 0 4%;
+    &:nth-child(odd) {
+      align-self: flex-start;
+    }
+
+    &:nth-child(even) {
+      align-self: flex-end;
+    }
+
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    font-size: ms(2);
+    &:nth-child(1) {
+      align-self: center;
+    }
+
+    &:nth-child(2) {
+      border: none;
+    }
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
 }

@@ -36,10 +36,6 @@ const Welcome = (props) => {
 
       <Enticement />
 
-      {/*<header className={style.heading}>
-        <h1 className={style.title}>Career Smarts</h1>
-      </header>*/}
-
       <div className={style.nav}>
         {/*<p className={style.message}>Ready for the Advantage?</p>*/}
           <IconButton

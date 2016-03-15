@@ -10,7 +10,11 @@ function Enticement(props) {
   ));
   return (
     <div className={`${props.className} ${style.wrapper}`}>
-        {enticements}
+      <div className={style.bgPic1} />
+      <div className={style.bgPic2} />
+      <div className={style.bgPic3} />
+
+      {enticements}
     </div>
   );
 }

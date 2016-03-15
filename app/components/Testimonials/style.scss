@@ -10,6 +10,7 @@
   left: 40vw;
   top: 13rem;
   transform: rotate(90deg);
+  z-index: 13;
 
   span:first-child {
     color: $silver-text;
@@ -49,10 +50,8 @@
     position: initial;
     display: initial;
     font-size: ms(3);
-    // letter-spacing: .1em;
     transform: rotate(0deg);
     margin: auto;
-    padding-top: 10px;
 
     span:first-child::after {
       content: "\f054";
