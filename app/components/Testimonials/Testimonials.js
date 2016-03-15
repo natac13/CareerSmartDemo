@@ -29,7 +29,6 @@ function Testimonials(props) {
         className={style.showTestimonials}
         label="Real Testimonials"
         onClick={testimonialsOpen}
-        flat
         primary
       />
 

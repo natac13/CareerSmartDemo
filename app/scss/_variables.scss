@@ -11,6 +11,7 @@ $question-bgcolor: #CFDCE6;
 // Text Colors
 $primary-text: #E9F3F5;
 $secondary-text: lighten(#555, 42%);
+$silver-text: grayscale(darken($primary-text, 32%));
 
 // Monochromatic
 $primary-color: #396c97;

@@ -144,13 +144,15 @@
 }
 
 .owner {
-  color: grayscale(darken($primary-text, 32%));
-  text-shadow: 0 0 5px $shadow;
+  font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
+  color: $silver-text;
+  text-shadow: 0 0 3px $shadow;
   position: absolute;
   transform: rotate(270deg);
-  left: -5rem;
-  top: 17rem;
-  font-size: ms(1);
+  width: 100%;
+  right: 45vw;
+  top: 13rem;
+  font-size: ms(0);
   letter-spacing: 2px;
 
   @media (min-width:20em) {
@@ -159,7 +161,8 @@
   }
   @media (min-width:30.063em) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-
+    font-size: ms(1);
+    top: 25rem;
   }
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
@@ -171,7 +174,7 @@
     margin: auto;
     position: initial;
     transform: rotate(0deg);
-
+    padding-top: 10px;
   }
   @media (min-width:64.063em) {
     /* big landscape tablets, laptops, and desktops */
