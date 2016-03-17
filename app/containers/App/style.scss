@@ -18,13 +18,13 @@
 .engagement {
   position: absolute;
   // background-color: $greyish-blue;
-  background-image: linear-gradient(rgba($greyish-blue, .4), rgba($primary-color, .2) 10%, rgba($primary-color, .5) 125%);
+  background-image: linear-gradient(to top, rgba($greyish-blue, .2), rgba($primary-color, .2) 10%, rgba($primary-color, .5) 125%);
   top: 190vh;
   right: 0;
   bottom: 0;
   left: 0;
   width: 100vw;
-  height: 160vh;
+  height: 140vh;
   display: flex;
   flex-flow: column;
   align-items: center;
@@ -41,7 +41,7 @@
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
     flex-flow: row;
-    height: 100vh;
+    height: 75vh;
 
   }
   @media (min-width:60.063em) {

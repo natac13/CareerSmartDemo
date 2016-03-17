@@ -1,18 +1,23 @@
 import React, { PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
+import { withReducer } from 'recompose';
 
 import { Button, IconButton } from 'react-toolbox/lib/button';
 import Drawer from 'react-toolbox/lib/drawer';
 import Icon from 'react-fa';
 
+import reducer, {
+  initialState,
+  testimonialsClose,
+  testimonialsOpen,
+} from './reducer';
 import style from './style.scss';
 
 function Testimonials(props) {
   const {
     className,
     testimonials,
-    testimonialsOpen,
-    testimonialsClose,
+    dispatch,
   } = props;
 
   const testimonialList = testimonials.get('testimonials');
@@ -28,7 +33,7 @@ function Testimonials(props) {
       <Button
         className={style.showTestimonials}
         label="Real Testimonials"
-        onClick={testimonialsOpen}
+        onClick={testimonialsOpen(dispatch)}
         primary
       />
 
@@ -37,11 +42,11 @@ function Testimonials(props) {
         active={isTestimonialsOpen}
         type={'right'}
         className={style.drawer}
-        onOverlayClick={testimonialsClose}
+        onOverlayClick={testimonialsClose(dispatch)}
       >
         <IconButton
           className={style.drawerClose}
-          onClick={testimonialsClose}
+          onClick={testimonialsClose(dispatch)}
           icon={<Icon name="close" />}
           floating
         />
@@ -53,9 +58,14 @@ function Testimonials(props) {
 
 Testimonials.propTypes = {
   className: PropTypes.string,
-  testimonialsOpen: PropTypes.func,
-  testimonialsClose: PropTypes.func,
+  dispatch: PropTypes.func,
   testimonials: ImmutablePropTypes.map,
 };
 
-export default Testimonials;
+export default withReducer(
+  'testimonials',
+  'dispatch',
+  reducer,
+  initialState,
+  Testimonials,
+);

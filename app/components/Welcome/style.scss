@@ -15,6 +15,7 @@
   display: flex;
   flex-flow: column;
   text-align: center;
+  overflow: hidden;
 
   @media (min-width:20em) {
       /* smartphones, iPhone, portrait 480x320 phones */
@@ -167,7 +168,7 @@
   }
 }
 
-.testimonials {
+.whatWeDo {
   margin: auto;
 }
 

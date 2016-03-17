@@ -26,16 +26,16 @@ class QuestionBank extends Component {
     const baseClass = classnames({
       [`${style.questionWrapper}`]: true,
       [`${style.left}`]: this.props.side === 'left',
-      [`${style.right}`]: this.props.side === 'right'
+      [`${style.right}`]: this.props.side === 'right',
     });
     const wrapperClass = classnames({
       [`${style.wrapper}`]: true,
-      [`${this.props.className}`]: !!this.props.className
+      [`${this.props.className}`]: !!this.props.className,
     });
 
     const answerClass = classnames({
       [`${style.answerLeft}`]: this.props.side === 'left',
-      [`${style.answerRight}`]: this.props.side === 'right'
+      [`${style.answerRight}`]: this.props.side === 'right',
     });
 
 
@@ -47,7 +47,8 @@ class QuestionBank extends Component {
       return (
         <div
           key={index}
-          className={baseClass}>
+          className={baseClass}
+        >
             <div className={style.questionDiv}>
               <p className={style.question}>{question.get('question')}</p>
             </div>

@@ -1,9 +1,7 @@
 import React, { PropTypes } from 'react';
-import ImmuablePropTypes from 'react-immutable-proptypes';
 
 import { Button, IconButton } from 'react-toolbox/lib/button';
 import Icon from 'react-fa';
-import Testimonials from '../Testimonials/';
 import WhatWeDo from '../WhatWeDo/';
 import Enticement from '../Enticement/';
 
@@ -15,12 +13,6 @@ const Welcome = (props) => {
   function handleScroll() {
     smoothScroll(document.querySelector('#marker'), 1500);
   }
-  const {
-    testimonialsOpen,
-    testimonialsClose,
-    testimonials,
-  } = props;
-
 
   return (
     <section className={ `${style.wrapper} ${props.className}` }>
@@ -33,13 +25,10 @@ const Welcome = (props) => {
           primary
         />
         <WhatWeDo
-          className={style.testimonilas}
+          className={style.whatWeDo}
         />
-       {/* <Testimonials
+        {/*<Testimonials
           className={style.testimonials}
-          testimonials={testimonials}
-          testimonialsOpen={testimonialsOpen}
-          testimonialsClose={testimonialsClose}
         />*/}
       </div>
 
@@ -60,9 +49,6 @@ const Welcome = (props) => {
 
 Welcome.propTypes = {
   className: PropTypes.string,
-  testimonialsOpen: PropTypes.func,
-  testimonialsClose: PropTypes.func,
-  testimonials: ImmuablePropTypes.map,
 };
 
 export default Welcome;

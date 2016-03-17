@@ -1,6 +1,11 @@
 import { fromJS } from 'immutable';
 import { curry } from 'ramda';
 
+import {
+  WHAT_WE_DO_CLOSE,
+  WHAT_WE_DO_OPEN,
+} from './constants';
+
 import whatWeDo from './whatWeDo.json';
 
 const initialState = fromJS({
@@ -8,17 +13,15 @@ const initialState = fromJS({
   whatWeDo,
 });
 
-const WHAT_WE_DO_OPEN = 'WHAT_WE_DO_OPEN';
-const WHAT_WE_DO_CLOSE = 'WHAT_WE_DO_CLOSE';
-
 const whatWeDoClose = curry((dispatch, event) => {
   event.preventDefault();
-  // if (typeof dispatch !== 'function') { return false; }
+  if (typeof dispatch !== 'function') { return false; }
   return dispatch({ type: WHAT_WE_DO_CLOSE });
 });
 
 const whatWeDoOpen = curry((dispatch, event) => {
   event.preventDefault();
+  if (typeof dispatch !== 'function') { return false; }
   return dispatch({ type: WHAT_WE_DO_OPEN });
 });
 
