@@ -1,0 +1,165 @@
+.wrapper {
+  width: 100%;
+}
+
+.showWhatWeDo {
+  font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
+  font-size: ms(1);
+  width: 100%;
+  position: absolute;
+  left: 40vw;
+  top: 13rem;
+  transform: rotate(90deg);
+  z-index: 13;
+
+
+  span:first-child {
+    letter-spacing: 2px;
+    color: $greyish-blue;
+    text-transform: none;
+  }
+
+  span:first-child::after {
+    content: "\F077";
+    font-family: 'Fontawesome';
+    font-weight: normal;
+    text-decoration: inherit;
+    color: $greyish-blue;
+    text-shadow: 0 0 3px $shadow;
+    font-size: inherit;
+    position: absolute;
+    top: -1em;
+    left: 50%;
+    transform: translate(-50%, 0);
+  }
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+    top: 25rem;
+    font-size: ms(1);
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    position: initial;
+    display: initial;
+    font-size: ms(3);
+    width: 100%;
+    transform: rotate(0deg);
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    span:first-child::after {
+      content: "\f054";
+      font-family: 'Fontawesome';
+      padding-left: 5rem;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translate(0, -50%);
+    }
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+}
+
+
+.drawer {
+  width: 85%;
+
+  @media (min-width:20em) {
+      /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    width: 45%;
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+    width: 40%;
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
+  aside {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0 4%;
+  }
+}
+
+.statement {
+  font-size: ms(-1);
+  width: 100%;
+
+  &:first-letter {
+    font-size: ms(4);
+    line-height: 1;
+    font-weight: 700;
+    padding: 0 8px 0 3px;
+    float: left;
+    color: $primary-color;
+  }
+
+  &:first-line {
+    font-weight: 700;
+  }
+
+  @media (min-width:20em) {
+    /* smartphones, iPhone, portrait 480x320 phones */
+
+  }
+  @media (min-width:30.063em) {
+    /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+
+  }
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    font-size: ms(1);
+    line-height: 1.7;
+    &:first-letter {
+      font-size: ms(5);
+    }
+  }
+  @media (min-width:60.063em) {
+    /* tablet, landscape iPad, lo-res laptops ands desktops */
+
+  }
+  @media (min-width:64.063em) {
+    /* big landscape tablets, laptops, and desktops */
+
+  }
+  @media (min-width:80.063em) {
+    /* hi-res laptops and desktops */
+
+  }
+
+}

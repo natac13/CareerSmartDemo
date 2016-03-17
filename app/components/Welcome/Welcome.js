@@ -4,6 +4,7 @@ import ImmuablePropTypes from 'react-immutable-proptypes';
 import { Button, IconButton } from 'react-toolbox/lib/button';
 import Icon from 'react-fa';
 import Testimonials from '../Testimonials/';
+import WhatWeDo from '../WhatWeDo/';
 import Enticement from '../Enticement/';
 
 import smoothScroll from 'smoothscroll';
@@ -25,25 +26,26 @@ const Welcome = (props) => {
     <section className={ `${style.wrapper} ${props.className}` }>
 
       <div className={style.bar}>
-        {/*<h3 className={style.owner}>Lionel Desjardins</h3>*/}
         <Button
           className={style.owner}
           onClick={handleScroll}
-          label="Lionel Desjardins"
+          label="Your Career Coach"
           primary
         />
-        <Testimonials
+        <WhatWeDo
+          className={style.testimonilas}
+        />
+       {/* <Testimonials
           className={style.testimonials}
           testimonials={testimonials}
           testimonialsOpen={testimonialsOpen}
           testimonialsClose={testimonialsClose}
-        />
+        />*/}
       </div>
 
       <Enticement />
 
       <div className={style.nav}>
-        {/*<p className={style.message}>Ready for the Advantage?</p>*/}
           <IconButton
             className={style.chevronButton}
             onClick={handleScroll}
