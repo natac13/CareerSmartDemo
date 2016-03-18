@@ -16,7 +16,6 @@ const Welcome = (props) => {
 
   return (
     <section className={ `${style.wrapper} ${props.className}` }>
-
       <div className={style.bar}>
         <Button
           className={style.owner}
@@ -24,25 +23,20 @@ const Welcome = (props) => {
           label="Your Career Coach"
           primary
         />
-        <WhatWeDo
-          className={style.whatWeDo}
-        />
-        {/*<Testimonials
-          className={style.testimonials}
-        />*/}
+        <WhatWeDo className={style.whatWeDo} />
       </div>
 
       <Enticement />
 
       <div className={style.nav}>
-          <IconButton
-            className={style.chevronButton}
-            onClick={handleScroll}
-            icon={<Icon className={style.chevron} name="chevron-down" />}
-            floating
-          />
+        <IconButton
+          className={style.chevronButton}
+          onClick={handleScroll}
+          icon={<Icon className={style.chevron} name="chevron-down" />}
+          floating
+        />
       </div>
-      <div id="marker"></div>
+      <div id="marker" />
     </section>
   );
 };

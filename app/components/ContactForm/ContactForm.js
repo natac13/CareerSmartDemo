@@ -1,51 +1,37 @@
 /** dependencies ***/
 import React, { PropTypes } from 'react';
-import ImmutablePropTypes from 'react-immutable-proptypes';
 import { reduxForm } from 'redux-form';
 import classnames from 'classnames';
 import Promise from 'bluebird';
 
-/** My functions ***/
-import {
-  checkAnyOpen,
-} from '../../js/core-questions';
-
 /** Third-party Components ***/
 import Dialog from 'react-toolbox/lib/dialog';
 import Input from 'react-toolbox/lib/input';
-import { Button, IconButton } from 'react-toolbox/lib/button';
-import TextField from 'material-ui/lib/text-field';
-import RaisedButton from 'material-ui/lib/raised-button';
+import { Button } from 'react-toolbox/lib/button';
 import Icon from 'react-fa';
-
-
-/** actions ***/
-import { addUser } from '../../actions/';
 
 /** styling ***/
 import style from './style';
 
 const ContactForm = (props) => {
-
   const {
     fields: { name, email, situation },
     handleSubmit,
     submitting,
     resetForm,
-    questions,
     closeAllQuestions,
     className,
+    addUser,
+    isOpen,
   } = props;
 
-  const submit = (values, dispatch) => {
-
-    // return a promise so that the submitting value gets updated from
-    // redux-from.
+  // returns a promise so that the submitting value gets updated from redux-from
+  function submit(values) {
     return new Promise((resolve, reject) => {
-      const actionObj = dispatch(addUser(values));
-      if (actionObj.error !== true) {
+      const actionObj = addUser(values);
+      if (!actionObj.error) {
         setTimeout(() => {
-          closeAllQuestions(questions);
+          closeAllQuestions();
           resolve();
         }, 1000); // simulate latency
       } else {
@@ -56,40 +42,39 @@ const ContactForm = (props) => {
         reject(error);
       }
     });
-  };
-
+  }
 
   const formClass = classnames({
     [style.form]: true,
     [className]: !!className,
   });
+  // wrapping the resetform and closeAllQuestions function calls
+  function handleClose() {
+    resetForm();
+    closeAllQuestions();
+  }
   return (
     <Dialog
-      active={checkAnyOpen(questions)}
-      onOverlayClick={() => closeAllQuestions(questions)}
+      active={isOpen}
+      onOverlayClick={closeAllQuestions}
       className={style.wrapper}
     >
-
       <form
         role="form"
         className={formClass}
-        onSubmit={handleSubmit(submit)}
       >
-
         <Input
           type="text"
           label="Enter Name"
           icon={<Icon name="user" />}
           {...name}
         />
-
         <Input
           type="text"
           label="Enter Email"
           icon={<Icon name="envelope" />}
           {...email}
         />
-
         <Input
           type="text"
           label="Your Situation"
@@ -97,13 +82,12 @@ const ContactForm = (props) => {
           icon={<Icon name="file-text" />}
           {...situation}
         />
-
           <div className={style.btnGroup}>
-
             <Button
               raised
               className={style.button}
               type="submit"
+              onClick={handleSubmit(submit)}
               disabled={submitting}
               icon={submitting ?
                 <Icon spin name="spinner" />
@@ -112,7 +96,6 @@ const ContactForm = (props) => {
               primary
               neutral
             />
-
             <Button
               raised
               className={style.button}
@@ -122,25 +105,26 @@ const ContactForm = (props) => {
               label="Cancel"
               primary
               netural
-              onClick={() => {
-                resetForm();
-                closeAllQuestions(questions);
-              }}
+              onClick={handleClose}
             />
           </div>
         </form>
-
     </Dialog>
   );
 };
 
 ContactForm.propTypes = {
-  questions: ImmutablePropTypes.listOf(ImmutablePropTypes.map).isRequired,
   closeAllQuestions: PropTypes.func.isRequired,
   className: PropTypes.string,
+  resetForm: PropTypes.func.isRequired,
+  submitting: PropTypes.bool.isRequired,
+  fields: PropTypes.object.isRequired,
+  handleSubmit: PropTypes.func.isRequired,
+  addUser: PropTypes.func,
+  isOpen: PropTypes.bool,
 };
 
 export default reduxForm({
   form: 'contact',
-  fields: ['name', 'email', 'situation']
+  fields: ['name', 'email', 'situation'],
 })(ContactForm);

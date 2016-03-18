@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import classnames from 'classnames';
 import { curry } from 'ramda';
@@ -8,7 +8,7 @@ import Icon from 'react-fa';
 import style from './style';
 
 function QuestionBank(props) {
-// class QuestionBank extends Component {
+  // curry the handleClick so that I can prime it with some arguments
   const handleClick = curry((isOpen, questionIndex, event) => {
     event.preventDefault();
     if (!isOpen) {
@@ -18,14 +18,14 @@ function QuestionBank(props) {
     }
   });
   // Style classes based off props
-  const baseClass = classnames({
-    [style.questionWrapper]: true,
-    [style.left]: props.side === 'left',
-    [style.right]: props.side === 'right',
-  });
   const wrapperClass = classnames({
     [style.wrapper]: true,
-    [props.className]: !!props.className,
+    [props.className]: !!props.className, // would come from parent component
+  });
+  const baseClass = classnames({
+    [style.questionWrapper]: true,
+    [style.left]: props.side === 'left', // sides of the landing page
+    [style.right]: props.side === 'right',
   });
   const answerClass = classnames({
     [style.answerLeft]: props.side === 'left',

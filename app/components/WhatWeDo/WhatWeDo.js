@@ -38,8 +38,6 @@ function WhatWeDo(props) {
         onClick={whatWeDoOpen(dispatch)}
         primary
       />
-
-
       <Drawer
         active={isWhatWeDoOpen}
         type={'right'}
