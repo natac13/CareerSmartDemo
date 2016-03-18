@@ -1,9 +1,9 @@
 import { fromJS } from 'immutable';
 
 import {
-  OPEN,
-  CLOSE,
-  CLOSE_ALL,
+  OPEN_QUESTION,
+  CLOSE_QUESTION,
+  CLOSE_ALL_QUESTIONS,
 } from '../constants/';
 
 import {
@@ -21,11 +21,11 @@ const questions = (state = initialState, action) => {
   switch (action.type) {
     // case NEW_QUESTION:
     //     return state;
-    case OPEN:
+    case OPEN_QUESTION:
       return openAnswers(state, action);
-    case CLOSE:
+    case CLOSE_QUESTION:
       return closeAnswers(state, action);
-    case CLOSE_ALL:
+    case CLOSE_ALL_QUESTIONS:
       return closeAll(state);
     default:
       return state;

@@ -1,33 +1,25 @@
-import { Map } from 'immutable';
-/*=======================================================
-=            Commented out section explained            =
-=======================================================*/
+function openAnswers(questions, action) {
+  return questions.setIn([action.payload, 'open'], true);
+}
 
-// for material-ui popover
-
-/*=====  End of Commented out section explained  ======*/
-
-
-export const openAnswers = (questions, action) => {
-  questions = questions.setIn([action.payload, 'open'], true);
-
-  return questions;
-};
-
-
-export const closeAnswers = (questions, action) => {
-  questions = questions.setIn([action.payload, 'open'], false);
-
-  return questions;
-};
+function closeAnswers(questions, action) {
+  return questions.setIn([action.payload, 'open'], false);
+}
 
 function isOpen(question) {
   return question.get('open') === true;
 }
-export const checkAnyOpen = (questionsMap) => {
+function checkAnyOpen(questionsMap) {
   return questionsMap.some(isOpen);
-};
-
-export function closeAll(questions) {
-  return questions.map((question) => question.set('open', false))
 }
+
+function closeAll(questions) {
+  return questions.map((question) => question.set('open', false));
+}
+
+export {
+  openAnswers,
+  closeAnswers,
+  checkAnyOpen,
+  closeAll,
+};
