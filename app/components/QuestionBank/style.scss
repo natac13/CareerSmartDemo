@@ -6,18 +6,13 @@
   margin-top: 1em;
   background-color: #ddd;
 
-  &:first-child {
+  &:nth-of-type(1) {
     align-self: flex-start;
   }
 
-  &:nth-child(2) {
+  &:nth-of-type(2) {
     margin-bottom: 1em;
     align-self: flex-end;
-  }
-
-  @media (min-width:20em) {
-    /* smartphones, iPhone, portrait 480x320 phones */
-
   }
   @media (min-width:30.063em) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -28,6 +23,10 @@
     width: 45%;
     margin: 0;
     align-self: initial !important;
+
+    &:nth-of-type(2) {
+    margin-bottom: 0
+  }
   }
   @media (min-width:60.063em) {
     /* tablet, landscape iPad, lo-res laptops ands desktops */
@@ -58,11 +57,6 @@
   &:hover .answerRight,
   &:focus .answerRight {
     right: 0%;
-  }
-
-  @media (min-width:20em) {
-    /* smartphones, iPhone, portrait 480x320 phones */
-
   }
   @media (min-width:30.063em) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -118,11 +112,6 @@
 
   .right & {
     padding-right: 1.5em;
-
-  }
-  //  there are specific left and right styling below nested in .left and .right
-  @media (min-width:20em) {
-    /* smartphones, iPhone, portrait 480x320 phones */
 
   }
   @media (min-width:30.063em) {
@@ -215,10 +204,6 @@
   max-width: 600px;
   font-size: ms(-1);
 
-  @media (min-width:20em) {
-    /* smartphones, iPhone, portrait 480x320 phones */
-
-  }
   @media (min-width:30.063em) {
     /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 
@@ -264,4 +249,20 @@
 .right {
   border-left: 2.5px solid darken($primary-dark, 3%);
   text-align: center;
+}
+
+.tap {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 5px;
+  padding: 5px;
+  border: 1px solid;
+  border-radius: 13px;
+  box-shadow: inset 0 0 3px 1px #333;
+
+  @media (min-width:40.063em) {
+    /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    display: none;
+  }
 }

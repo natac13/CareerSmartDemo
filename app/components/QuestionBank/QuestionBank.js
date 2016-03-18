@@ -4,6 +4,7 @@ import classnames from 'classnames';
 import { curry } from 'ramda';
 
 import Icon from 'react-fa';
+import FontIcon from 'react-toolbox/lib/font_icon';
 
 import style from './style';
 
@@ -45,7 +46,12 @@ function QuestionBank(props) {
         className={baseClass}
       >
         <div className={style.questionDiv}>
-          <p className={style.question}>{question.get('question')}</p>
+          <p className={style.question}>
+            {question.get('question')}
+            {index === 0 && props.side === 'left'
+            ? <FontIcon className={style.tap} value="touch_app" />
+            : null }
+          </p>
         </div>
         <div
           className={answerClass}
