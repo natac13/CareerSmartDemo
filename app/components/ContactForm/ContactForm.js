@@ -1,29 +1,28 @@
-/*** dependencies ***/
-import React, { Component, PropTypes } from 'react';
+/** dependencies ***/
+import React, { PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import { reduxForm } from 'redux-form';
-import classnames    from 'classnames';
-import Promise       from 'bluebird';
+import classnames from 'classnames';
+import Promise from 'bluebird';
 
-/*** My functions ***/
+/** My functions ***/
 import {
   checkAnyOpen,
-  closeAll
 } from '../../js/core-questions';
 
-/*** Third-party Components ***/
+/** Third-party Components ***/
 import Dialog from 'react-toolbox/lib/dialog';
-import Input  from 'react-toolbox/lib/input';
+import Input from 'react-toolbox/lib/input';
 import { Button, IconButton } from 'react-toolbox/lib/button';
-import TextField    from 'material-ui/lib/text-field';
+import TextField from 'material-ui/lib/text-field';
 import RaisedButton from 'material-ui/lib/raised-button';
 import Icon from 'react-fa';
 
 
-/*** actions ***/
+/** actions ***/
 import { addUser } from '../../actions/';
 
-/*** styling ***/
+/** styling ***/
 import style from './style';
 
 const ContactForm = (props) => {
@@ -34,8 +33,8 @@ const ContactForm = (props) => {
     submitting,
     resetForm,
     questions,
-    closeAll,
-    className
+    closeAllQuestions,
+    className,
   } = props;
 
   const submit = (values, dispatch) => {
@@ -46,56 +45,58 @@ const ContactForm = (props) => {
       const actionObj = dispatch(addUser(values));
       if (actionObj.error !== true) {
         setTimeout(() => {
-          closeAll(questions);
+          closeAllQuestions(questions);
           resolve();
         }, 1000); // simulate latency
       } else {
         const error = {
           name: 'There was an error on our end. Please just try again.',
-          _error: 'ADD_ERROR'
+          _error: 'ADD_ERROR',
         };
         reject(error);
       }
-
     });
-
   };
 
 
   const formClass = classnames({
     [style.form]: true,
-    [className]: !!className
+    [className]: !!className,
   });
-  console.log(props)
   return (
     <Dialog
       active={checkAnyOpen(questions)}
-      onOverlayClick={() => closeAll(questions)}
-      className={style.wrapper}>
+      onOverlayClick={() => closeAllQuestions(questions)}
+      className={style.wrapper}
+    >
 
       <form
         role="form"
         className={formClass}
-        onSubmit={handleSubmit(submit)}>
+        onSubmit={handleSubmit(submit)}
+      >
 
         <Input
           type="text"
           label="Enter Name"
           icon={<Icon name="user" />}
-          {...name} />
+          {...name}
+        />
 
         <Input
           type="text"
           label="Enter Email"
           icon={<Icon name="envelope" />}
-          {...email} />
+          {...email}
+        />
 
         <Input
           type="text"
           label="Your Situation"
-          multiline={true}
+          multiline
           icon={<Icon name="file-text" />}
-          {...situation} />
+          {...situation}
+        />
 
           <div className={style.btnGroup}>
 
@@ -105,11 +106,12 @@ const ContactForm = (props) => {
               type="submit"
               disabled={submitting}
               icon={submitting ?
-                <Icon spin name="spinner" />   :
-                <Icon name="paper-plane-o" />}
+                <Icon spin name="spinner" />
+              : <Icon name="paper-plane-o" />}
               label="Submit"
               primary
-              neutral={true} />
+              neutral
+            />
 
             <Button
               raised
@@ -119,11 +121,12 @@ const ContactForm = (props) => {
               icon={<Icon name="trash-o" />}
               label="Cancel"
               primary
-              netural={true}
+              netural
               onClick={() => {
                 resetForm();
-                closeAll(questions);
-              }} />
+                closeAllQuestions(questions);
+              }}
+            />
           </div>
         </form>
 
@@ -133,8 +136,8 @@ const ContactForm = (props) => {
 
 ContactForm.propTypes = {
   questions: ImmutablePropTypes.listOf(ImmutablePropTypes.map).isRequired,
-  closeAll: PropTypes.func.isRequired,
-  className: PropTypes.string
+  closeAllQuestions: PropTypes.func.isRequired,
+  className: PropTypes.string,
 };
 
 export default reduxForm({

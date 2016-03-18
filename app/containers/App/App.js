@@ -32,16 +32,16 @@ function App(props) {
         <QuestionBank
           side="left"
           className={style.leftSide}
-          open={actions.open}
-          close={actions.close}
+          openQuestion={actions.openQuestion}
+          closeQuestion={actions.closeQuestion}
           {...props}
           questions={questions.take(3)}
         />
         <QuestionBank
           side="right"
           className={style.rightSide}
-          open={actions.open}
-          close={actions.close}
+          openQuestion={actions.openQuestion}
+          closeQuestion={actions.closeQuestion}
           {...props}
           questions={questions.takeLast(3)}
         />
@@ -49,7 +49,7 @@ function App(props) {
 
         <ContactForm
           questions={questions}
-          closeAll={actions.closeAll}
+          closeAllQuestions={actions.closeAllQuestions}
         />
 
       </div>

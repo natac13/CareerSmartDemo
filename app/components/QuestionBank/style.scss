@@ -102,6 +102,7 @@
 .questionDiv {
   display: flex;
   justify-content: center;
+  background-color: #fff;
 }
 
 .question {
@@ -110,6 +111,15 @@
   font-family: 'Oswald', Impact, 'Arial Black', 'sans serif';
   text-align: center;
   color: #222;
+
+  .left & {
+    padding-left: 1.5em;
+  }
+
+  .right & {
+    padding-right: 1.5em;
+
+  }
   //  there are specific left and right styling below nested in .left and .right
   @media (min-width:20em) {
     /* smartphones, iPhone, portrait 480x320 phones */
@@ -249,17 +259,9 @@
 .left {
   border-right: 2.5px solid darken($primary-dark, 3%);
   text-align: center;
-
-  .question {
-    padding-left: 1.5em;
-  }
 }
 
 .right {
   border-left: 2.5px solid darken($primary-dark, 3%);
   text-align: center;
-
-  .question {
-    padding-right: 1.5em;
-  }
 }

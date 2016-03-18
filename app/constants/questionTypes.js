@@ -1,3 +1,3 @@
-export const OPEN = 'OPEN';
-export const CLOSE = 'CLOSE';
-export const CLOSE_ALL = 'CLOSE_ALL';
+export const OPEN_QUESTION = 'OPEN_QUESTION';
+export const CLOSE_QUESTION = 'CLOSE_QUESTION';
+export const CLOSE_ALL_QUESTIONS = 'CLOSE_ALL_QUESTIONS';
