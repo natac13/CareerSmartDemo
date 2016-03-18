@@ -21,7 +21,7 @@ function Engagement(props) {
     [className]: !! className,
   });
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass} id="questions">
       <QuestionBank
         side="left"
         openQuestion={actions.openQuestion}
