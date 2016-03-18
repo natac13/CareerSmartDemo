@@ -11,7 +11,11 @@ import style from './style';
 
 const Welcome = (props) => {
   function handleScroll() {
-    smoothScroll(document.querySelector('#marker'), 1500);
+    smoothScroll(document.querySelector('#marker'), 1200);
+  }
+
+  function scrollCoach() {
+    smoothScroll(document.querySelector('#coach'), 1000);
   }
 
   return (
@@ -19,7 +23,7 @@ const Welcome = (props) => {
       <div className={style.bar}>
         <Button
           className={style.owner}
-          onClick={handleScroll}
+          onClick={scrollCoach}
           label="Your Career Coach"
           primary
         />
