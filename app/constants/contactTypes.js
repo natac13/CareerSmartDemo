@@ -1,0 +1,2 @@
+export const CONTACT_OPEN = 'CONTACT_OPEN';
+export const CONTACT_CLOSE = 'CONTACT_CLOSE';

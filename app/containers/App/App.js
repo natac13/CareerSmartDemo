@@ -17,27 +17,33 @@ import {
 import style from './style';
 
 function App(props) {
+  console.log(props)
   const {
   actions,
   questions,
+  contact,
   } = props;
   const isOpen = checkAnyOpen(questions);
+  const contactOpen = contact.get('contactOpen');
 
   function closeAllQuestions() {
     return actions.closeAllQuestions(questions);
   }
   return (
     <div className={style.app}>
-      <Header />
+      <Header
+        contactOpen={actions.contactOpen}
+      />
       <Welcome
         className={style.welcome}
       />
       <Engagement
         className={style.engagement}
         actions={actions}
-        isOpen={isOpen}
+        isOpen={isOpen || contactOpen}
         closeAllQuestions={closeAllQuestions}
         questions={questions}
+        contactClose={actions.contactClose}
       />
       <Profile />
     </div>
@@ -47,14 +53,17 @@ function App(props) {
 App.propTypes = {
   actions: PropTypes.object,
   questions: ImmutablePropTypes.list,
+  contact: ImmutablePropTypes.map,
 };
 
 function mapStateToProps(state) {
   const {
     questions,
+    contact,
   } = state;
   return {
     questions,
+    contact,
   };
 }
 

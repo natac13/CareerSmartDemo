@@ -33,7 +33,9 @@ function Header(props) {
             </a>
           </div>
           <div className={style.navButton} >
-            <NavButton />
+            <NavButton
+              contactOpen={props.contactOpen}
+            />
           </div>
       </header>
   );

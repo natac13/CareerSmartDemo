@@ -29,7 +29,8 @@ function NavButton(props) {
     dispatch,
     scrollCoach,
     scrollQuestions,
-    scrollTop
+    scrollTop,
+    contactOpen,
   } = props;
   const isOpen = navButton.get('isOpen');
   const wrapperClass = classnames({
@@ -47,6 +48,10 @@ function NavButton(props) {
   }
   function handleTop() {
     scrollTop();
+    navClose(dispatch, null);
+  }
+  function handleContact() {
+    contactOpen();
     navClose(dispatch, null);
   }
   return (
@@ -98,7 +103,7 @@ function NavButton(props) {
           label="CONTACT"
           neutral={false}
           className={style.link}
-          href="http://www.careersmarts.ca/contact.php"
+          onClick={handleContact}
         />
       </Dialog>
     </div>
@@ -114,6 +119,8 @@ NavButton.propTypes = {
   navButton: ImmutablePropTypes.map.isRequired,
   scrollCoach: PropTypes.func.isRequired,
   scrollQuestions: PropTypes.func.isRequired,
+  scrollTop: PropTypes.func.isRequired,
+  contactOpen: PropTypes.func.isRequired,
 };
 
 
