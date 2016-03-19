@@ -31,9 +31,10 @@ function Profile(props) {
           src={require('../../images/lionel.png')}
           alt={name}
         />
-        <div className={style.socails}>
+        <div className={style.socials}>
           <IconButton
             icon={<Icon name="linkedin" />}
+            neutral={false}
             href={linkedInUrl}
           />
         </div>

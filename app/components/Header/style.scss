@@ -94,6 +94,9 @@
 .navButton {
   align-self: center;
   margin-right: 1em;
+  position: fixed;
+  top: .5em;
+  right: .5em;
 
 
   @media (min-width:20em) {
@@ -108,7 +111,6 @@
 
   @media (min-width:40.063em) {
     /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-    position: fixed;
     top: 1em;
     right: 1em;
 

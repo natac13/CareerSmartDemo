@@ -23,6 +23,7 @@ const ContactForm = (props) => {
     className,
     addUser,
     isOpen,
+    contactClose,
   } = props;
 
   // returns a promise so that the submitting value gets updated from redux-from
@@ -52,6 +53,7 @@ const ContactForm = (props) => {
   function handleClose() {
     resetForm();
     closeAllQuestions();
+    contactClose();
   }
   return (
     <Dialog

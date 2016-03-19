@@ -14,6 +14,7 @@ function Engagement(props) {
     isOpen,
     closeAllQuestions,
     className,
+    contactClose,
   } = props;
 
   const wrapperClass = classnames({
@@ -21,7 +22,7 @@ function Engagement(props) {
     [className]: !! className,
   });
   return (
-    <div className={wrapperClass}>
+    <div className={wrapperClass} id="questions">
       <QuestionBank
         side="left"
         openQuestion={actions.openQuestion}
@@ -38,6 +39,7 @@ function Engagement(props) {
         addUser={actions.addUser}
         isOpen={isOpen}
         closeAllQuestions={closeAllQuestions}
+        contactClose={contactClose}
       />
     </div>
   );

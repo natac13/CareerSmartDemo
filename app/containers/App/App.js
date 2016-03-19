@@ -7,7 +7,8 @@ import * as ActionCreators from '../../actions';
 import Header from '../../components/Header/';
 import Welcome from '../../components/Welcome/';
 import Engagement from '../../components/Engagement/';
-import Profile from '../../components/Profile';
+import Profile from '../../components/Profile/';
+import Testimonials from '../../components/Testimonials/';
 
 /** My functions ***/
 import {
@@ -17,29 +18,43 @@ import {
 import style from './style';
 
 function App(props) {
+  console.log(props)
   const {
   actions,
   questions,
+  contact,
+  testimonials,
   } = props;
+  // contact form open booleans
   const isOpen = checkAnyOpen(questions);
+  const isContactOpen = contact.get('isContactOpen');
+
 
   function closeAllQuestions() {
     return actions.closeAllQuestions(questions);
   }
   return (
     <div className={style.app}>
-      <Header />
+      <Header
+        contactOpen={actions.contactOpen}
+        testimonialsOpen={actions.testimonialsOpen}
+      />
       <Welcome
         className={style.welcome}
       />
       <Engagement
         className={style.engagement}
         actions={actions}
-        isOpen={isOpen}
+        isOpen={isOpen || isContactOpen}
         closeAllQuestions={closeAllQuestions}
         questions={questions}
+        contactClose={actions.contactClose}
       />
       <Profile />
+      <Testimonials
+        testimonialsClose={actions.testimonialsClose}
+        isTestimonialsOpen={testimonials.get('isTestimonialsOpen')}
+      />
     </div>
   );
 }
@@ -47,14 +62,15 @@ function App(props) {
 App.propTypes = {
   actions: PropTypes.object,
   questions: ImmutablePropTypes.list,
+  contact: ImmutablePropTypes.map,
+  testimonials: ImmutablePropTypes.map,
 };
 
 function mapStateToProps(state) {
-  const {
-    questions,
-  } = state;
   return {
-    questions,
+    questions: state.questions,
+    contact: state.contact,
+    testimonials: state.testimonials,
   };
 }
 
