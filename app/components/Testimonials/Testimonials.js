@@ -1,27 +1,22 @@
 import React, { PropTypes } from 'react';
 import ImmutablePropTypes from 'react-immutable-proptypes';
-import { withReducer } from 'recompose';
+import { pure, defaultProps, compose } from 'recompose';
+import { List } from 'immutable';
 
-import { Button, IconButton } from 'react-toolbox/lib/button';
+import { IconButton } from 'react-toolbox/lib/button';
 import Drawer from 'react-toolbox/lib/drawer';
 import Icon from 'react-fa';
 
-import reducer, {
-  initialState,
-  testimonialsClose,
-  testimonialsOpen,
-} from './reducer';
 import style from './style.scss';
 
 function Testimonials(props) {
   const {
     className,
-    testimonials,
-    dispatch,
+    testimonialsClose,
+    isTestimonialsOpen,
+    testimonialList,
   } = props;
 
-  const testimonialList = testimonials.get('testimonials');
-  const isTestimonialsOpen = testimonials.get('isTestimonialsOpen');
 
   const testimonialsJSX = testimonialList
     .map((testimonial, i) => (
@@ -30,23 +25,15 @@ function Testimonials(props) {
 
   return (
     <div className={`${className} ${style.wrapper}`}>
-      <Button
-        className={style.showTestimonials}
-        label="Real Testimonials"
-        onClick={testimonialsOpen(dispatch)}
-        primary
-      />
-
-
       <Drawer
         active={isTestimonialsOpen}
-        type={'right'}
+        type={'left'}
         className={style.drawer}
-        onOverlayClick={testimonialsClose(dispatch)}
+        onOverlayClick={testimonialsClose}
       >
         <IconButton
           className={style.drawerClose}
-          onClick={testimonialsClose(dispatch)}
+          onClick={testimonialsClose}
           icon={<Icon name="close" />}
           floating
         />
@@ -58,14 +45,14 @@ function Testimonials(props) {
 
 Testimonials.propTypes = {
   className: PropTypes.string,
-  dispatch: PropTypes.func,
-  testimonials: ImmutablePropTypes.map,
+  testimonialsClose: PropTypes.func.isRequired,
+  isTestimonialsOpen: PropTypes.bool.isRequired,
+  testimonialList: ImmutablePropTypes.list.isRequired,
 };
 
-export default withReducer(
-  'testimonials',
-  'dispatch',
-  reducer,
-  initialState,
-  Testimonials,
-);
+export default compose(
+  defaultProps({
+    testimonialList: List(require('./testimonials.json')),
+  }),
+  pure
+)(Testimonials);

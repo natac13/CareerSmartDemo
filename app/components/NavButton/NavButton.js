@@ -31,6 +31,7 @@ function NavButton(props) {
     scrollQuestions,
     scrollTop,
     contactOpen,
+    testimonialsOpen,
   } = props;
   const isOpen = navButton.get('isOpen');
   const wrapperClass = classnames({
@@ -52,6 +53,10 @@ function NavButton(props) {
   }
   function handleContact() {
     contactOpen();
+    navClose(dispatch, null);
+  }
+  function handleTestimonails() {
+    testimonialsOpen();
     navClose(dispatch, null);
   }
   return (
@@ -79,28 +84,28 @@ function NavButton(props) {
         />
         <Button
           flat
-          label="WHO WE ARE"
+          label="Who we are"
           neutral={false}
           className={style.link}
           onClick={handleCoach}
         />
         <Button
           flat
-          label="WHAT WE DO"
+          label="What we do"
           neutral={false}
           className={style.link}
           onClick={handleQuetions}
         />
         <Button
           flat
-          label="SERVICES"
+          label="Testimonials"
           neutral={false}
           className={style.link}
-          href="http://www.careersmarts.ca/career_services.php"
+          onClick={handleTestimonails}
         />
         <Button
           flat
-          label="CONTACT"
+          label="Contact"
           neutral={false}
           className={style.link}
           onClick={handleContact}

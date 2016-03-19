@@ -6,15 +6,15 @@ import {
 } from '../constants/';
 
 const initialState = Map({
-  contactOpen: false,
+  isContactOpen: false,
 });
 
 function contact(state = initialState, action) {
   switch (action.type) {
     case CONTACT_OPEN:
-      return state.set('contactOpen', true);
+      return state.set('isContactOpen', true);
     case CONTACT_CLOSE:
-      return state.set('contactOpen', false);
+      return state.set('isContactOpen', false);
     default:
       return state;
   }

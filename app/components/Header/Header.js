@@ -35,10 +35,16 @@ function Header(props) {
           <div className={style.navButton} >
             <NavButton
               contactOpen={props.contactOpen}
+              testimonialsOpen={props.testimonialsOpen}
             />
           </div>
       </header>
   );
 }
+
+Header.propTypes = {
+  contactOpen: PropTypes.func.isRequired,
+  testimonialsOpen: PropTypes.func.isRequired,
+};
 
 export default Header;
